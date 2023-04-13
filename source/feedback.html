@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedona</title>
+</head>
+<body>
+    <header class="page-header">
+
+        <nav class="page-header__nav main-nav">
+
+            <a class="page-header__logo" href="/" >
+                <span class="visually-hidden">Site Logo</span>
+                <img src="images/logo.svg" width="226" height="30" alt="Barbershop 'Borodinski' Logo">
+            </a>
+
+            <div class="main-nav__list">
+                <button class="main-nav__toggle" type="button">
+                  <svg class="main-nav__icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path d="M4 6h24v2H4V6Zm0 18h24v2H4v-2Zm0-9h24v2H4v-2Z"></path>
+                  </svg>
+                  <span class="visually-hidden">Open Side Navigation</span>
+                </button>
+              </div>
+
+            <div class="side-nav side-nav--inactive">
+                <button class="side-nav__close" type="button">
+                    <span class="visually-hidden">Close Side Navigation</span>
+                  </button>
+                <ul class="side-nav__list">
+                    <li class="side-nav__item">
+                        <a class="side-nav__link" href="#">Главная</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a class="main-nav__link" href="#">Фото и видео</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a class="side-nav__link" href="#">Форма Отзыва</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a class="side-nav__link" href="#">HTML ACADEMY</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="page-header__cover page_header__cover--big">
+            <img class="page-header__cover-image" src="#" alt="">
+        </div>
+
+        <h1 class="page-header__title">
+            СЕДОНА — небольшой городок в АРИЗОНЕ, зАСЛУЖИвающий большего!
+        </h1>
+        <p class="page-header__description">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+
+    </header>
+
+    <main>
+        <form class="form" action="https://echo.htmlacademy.ru/" method="POST">
+            <fieldset class="form__fieldset">
+                <legend class="form__title">Представьтесь:</legend>
+
+                <label for="surename">Фамилия</label>
+                <input class="form__field" type="text" id="surename" name="name" placeholder="Фамилия">
+
+                <label for="name">Имя</label>
+                <input class="form__field" type="text" id="name" name="name" placeholder="Имя">
+
+                <label for="middle-name">Отчество</label>
+                <input class="form__field" type="text" id="middle-name" name="name" placeholder="Отчество">
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+                <legend class="form__title">Контактная информация:</legend>
+
+                <label for="phone-number">Контактный телефон*:</label>
+                <input class="form__field--phone-number" type="number" id="phone-number" name="phone-number" placeholder="Введите телефон">
+
+                <label for="e-mail">Электронная почта*:</label>
+                <input class="form__field--email" type="email" id="e-mail" name="email" placeholder="Введите e-mail">
+
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+
+                <legend class="form__title">ВАше Общее впечатление:</legend>
+
+                <ul class="form__filter-list">
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="radio" name="impression" value="Скорее положительное" checked>
+                            <span class="form__mark"></span>
+                            <span class="form__label-title" >Скорее положительное</span>
+                        </label>
+                    </li>
+
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="radio"  name="impression" value="Скорее отрицательное">
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Скорее отрицательное</span>
+                        </label>
+                    </li>
+
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="radio" name="impression" value="Затрудняюсь ответить">
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Затрудняюсь ответить</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+
+                <legend class="form__title">посещенные достопримечательности:</legend>
+
+                <ul class="form__filter-list">
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="Мост Дьявола" checked>
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Мост Дьявола</span>
+                        </label>
+                    </li>
+
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="Гора-Колокол" checked>
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Гора-Колокол</span>
+                        </label>
+                    </li>
+
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="Слайд-парк" checked>
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Слайд-парк</span>
+                        </label>
+                    </li>
+
+                    <li class="form__filter-item">
+                        <label class="form__label">
+                            <input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="Красные скалы" checked>
+                            <span class="form__mark"></span>
+                            <span class="form__label-title">Красные скалы</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+                <legend class="form__title">Опишите свои эмоции:</legend>
+
+                <label class="visually-hidden" for="feedback-message">Feedback Message</label>
+                <textarea class="form__field" id="feedback-message" name="feedback-message" placeholder="Опишите подробно все свои восторги">
+                </textarea>
+            </fieldset>
+
+            <button class="form__button button" type="submit">
+                ОТПРАВИТЬ ОТЗЫВ
+            </button>
+
+            <p class="form__notice"
+            >* — обязательные поля
+        </p>
+
+        </form>
+
+        <div class="visually-hidden modal">
+            <p class="modal__message">
+                Что-то пошлоне так!
+            </p>
+            <p class="modal__deescription">
+                Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
+            </p>
+            <button class="modal__button button">
+                OK
+            </button>
+        </div>
+        <div class="visually-hidden modal">
+            <p class="modal__message">
+                Ваш отзыв отправлен!
+            </p>
+            <p class="modal__deescription">
+                Спасибо за ваше участие, ваш отзыв уже поступил к нам.В ближайшее время мы опубликуем его на сайте.
+            </p>
+            <div class="modal__button-wrapper">
+                <button class="modal__button button">
+                    ЗАКРЫТЬ ОКНО
+                </button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="page-footer">
+
+        <p class="page-footer__tag">#visitSEDONA</p>
+
+        <div class="page-footer__social social">
+            <ul class="social__list">
+                <li class="social__item">
+                    <a href="#">Vkontakte</a>
+                </li>
+                <li class="social__item">
+                    <a href="#">Telegram</a>
+                </li>
+                <li class="social__item">
+                    <a href="#">Youtube</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-footer__copyright">
+            <p class="page-footer__copyright-title">Разработано</p>
+            <img class="page-footer__copyright-img" src="#" alt="">
+        </div>
+
+    </footer>
+</body>
+</html>
