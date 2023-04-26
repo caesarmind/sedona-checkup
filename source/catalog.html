@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sedona</title>
+</head>
+
+<body>
+	<header class="page-header">
+
+		<nav class="page-header__nav main-nav">
+
+			<a class="page-header__logo" href="index.html">
+				<span class="visually-hidden">Site Logo</span>
+				<img src="images/logo.svg" width="226" height="30" alt="Logo of Sedona">
+			</a>
+
+			<div class="main-nav__list">
+				<button class="main-nav__toggle" type="button">
+					<svg class="main-nav__icon" width="32" height="32" viewBox="0 0 32 32">
+						<path d="M4 6h24v2H4V6Zm0 18h24v2H4v-2Zm0-9h24v2H4v-2Z"></path>
+					</svg>
+					<span class="visually-hidden">Open Side Navigation</span>
+				</button>
+			</div>
+
+			<div class="side-nav side-nav--inactive">
+				<button class="side-nav__close" type="button">
+					<span class="visually-hidden">Close Side Navigation</span>
+				</button>
+				<ul class="side-nav__list">
+					<li class="side-nav__item">
+						<a class="side-nav__link" href="#">Главная</a>
+					</li>
+					<li class="side-nav__item">
+						<a class="main-nav__link" href="#">Фото и видео</a>
+					</li>
+					<li class="side-nav__item">
+						<a class="side-nav__link" href="#">Форма Отзыва</a>
+					</li>
+					<li class="side-nav__item">
+						<a class="side-nav__link" href="#">HTML ACADEMY</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="page-content">
+			<div class="page-content__cover">
+				<img class="page-content__cover-image" src="#" alt="">
+			</div>
+
+			<h1 class="page-content_title">
+				Фото и видео
+			</h1>
+			<p class="page-content__description">
+				Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.
+			</p>
+		</section>
+		<section class="gallery">
+			<h2 class="visually-hidden">Gallery</h2>
+			<ul class="gallery__list">
+				<li class="gallery__item gallery__item--featured">
+					<img class="gallery__img" src="#" alt="">
+					<h3 class="gallery__title">неродные просторы</h3>
+					<p class="gallery__author">Автор фото: Борис</p>
+					<button class="gallery__like" type="button">
+						<span class="visually-hidden">Like Button</span>
+					</button>
+					<p class="gallery__like-count">1350</p>
+				</li>
+				<li class="gallery__item">
+					<img class="gallery__img" src="#" alt="">
+					<h3 class="gallery__title">Местная растительность</h3>
+					<p class="gallery__author">Автор фото: Сергей</p>
+					<button class="gallery__like" type="button">
+						<span class="visually-hidden">Like Button</span>
+					</button>
+					<p class="gallery__like-count">143</p>
+				</li>
+				<li class="gallery__item">
+					<img class="gallery__img" src="#" alt="">
+					<h3 class="gallery__title">Дорога на север</h3>
+					<p class="gallery__author">Автор фото: Петр</p>
+					<button class="gallery__like" type="button">
+						<span class="visually-hidden">Like Button</span>
+					</button>
+					<p class="gallery__like-count">96</p>
+				</li>
+				<li class="gallery__item">
+					<img class="gallery__img" src="#" alt="">
+					<h3 class="gallery__title">Мост дьявола</h3>
+					<p class="gallery__author">Автор фото: Антон</p>
+					<button class="gallery__like" type="button">
+						<span class="visually-hidden">Like Button</span>
+					</button>
+					<p class="gallery__like-count">254</p>
+				</li>
+			</ul>
+		</section>
+		<section class="video-block">
+			<h2 class="video-block__title">
+				Все еще сомневаетесь?
+			</h2>
+			<p class="video-block__description">
+				Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
+			</p>
+			<!-- TODO video-->
+		</section>
+	</main>
+	<footer class="page-footer">
+
+		<p class="page-footer__tag">#visitSEDONA</p>
+
+		<div class="page-footer__social social">
+			<ul class="social__list">
+				<li class="social__item">
+					<a href="#">Vkontakte</a>
+				</li>
+				<li class="social__item">
+					<a href="#">Telegram</a>
+				</li>
+				<li class="social__item">
+					<a href="#">Youtube</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="page-footer__copyright">
+			<p class="page-footer__copyright-title">Разработано</p>
+			<img class="page-footer__copyright-img" src="#" alt="">
+		</div>
+
+	</footer>
+</body>
+
+</html>
