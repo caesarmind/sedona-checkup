@@ -13,10 +13,10 @@
 	},
 	"scripts": {
 		"start": "gulp",
-		"bemlint": "gulp bemLinter --silent",
+		"bemlint": "gulp lintBem --silent",
 		"w3c": "gulp validateMarkup --silent",
 		"editorconfig": "editorconfig-cli",
-		"lint": "npm run w3c && npm run editorconfig && npm run bemlint && gulp stylesLinter",
+		"lint": "gulp lint && npm run editorconfig ",
 		"test": "npm run lint"
 	},
 	"editorconfig-cli": [

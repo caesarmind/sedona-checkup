@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
-import stylint from 'stylelint';
+import stylelint from 'stylelint';
 import bemlinter from 'gulp-html-bemlinter';
 import scssSyntax from 'postcss-scss';
 import browser from 'browser-sync';
@@ -11,7 +11,7 @@ import { htmlValidator } from 'gulp-w3c-html-validator';
 const server = (done) => {
 	browser.init({
 		server: {
-			baseDir: 'source'
+			baseDir: ['source', 'source/static'],
 		},
 		cors: true,
 		ui: false,
@@ -21,26 +21,25 @@ const server = (done) => {
 }
 
 //Compile SCSS files
-const sassCompiler = () => {
+const compileSass = () => {
 	return gulp
 		.src('source/sass/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('source/css'))
 		.pipe(browser.reload({ stream: true }));
-
 }
 
 // Linter for SASS
-const stylesLinter = () => {
+const lintStyles = () => {
 	return gulp
 	.src('source/sass/**/*.scss')
 	.pipe(
-		postcss([stylint()],{ syntax: scssSyntax })
+		postcss([stylelint()], { syntax: scssSyntax })
 	)
 }
 
 // Linter for BEM
-const bemLinter = () => {
+const lintBem = () => {
 	return gulp
 	.src('source/*.html')
 	.pipe(bemlinter());
@@ -56,11 +55,12 @@ const validateMarkup = () => {
 
 // Watcher
 const watcher = () => {
-		gulp.watch('source/sass/**/*.scss', gulp.series(sassCompiler));
-		gulp.watch('source/**/*.html').on('change', browser.reload);
-}
+	gulp.watch('source/sass/**/*.scss', gulp.parallel(compileSass, lintStyles));
+	gulp.watch('source/**/*.html', gulp.parallel(validateMarkup, lintBem, browser.reload));
+};
 
+const lint = gulp.series(validateMarkup, lintBem, lintStyles);
 
-export { stylesLinter, bemLinter, validateMarkup};
+export { validateMarkup, lintBem, lintStyles, lint };
 //Default
 export default gulp.series(server, watcher);
