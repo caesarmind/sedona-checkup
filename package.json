@@ -1,0 +1,39 @@
+{
+	"devDependencies": {
+		"@htmlacademy/editorconfig-cli": "^1.0.0",
+		"browser-sync": "^2.29.1",
+		"gulp": "^4.0.2",
+		"gulp-dart-sass": "^1.1.0",
+		"gulp-html-bemlinter": "^2.1.3",
+		"gulp-postcss": "^9.0.1",
+		"gulp-w3c-html-validator": "^5.2.0",
+		"postcss-scss": "^4.0.6",
+		"stylelint": "^14.16.1",
+		"stylelint-config-htmlacademy": "^1.1.4"
+	},
+	"scripts": {
+		"start": "gulp",
+		"bemlint": "gulp lintBem --silent",
+		"w3c": "gulp validateMarkup --silent",
+		"editorconfig": "editorconfig-cli",
+		"lint": "gulp lint && npm run editorconfig ",
+		"test": "npm run lint"
+	},
+	"editorconfig-cli": [
+		"*.js",
+		"*.json",
+		"source/*.html",
+		"source/js/**/*.js",
+		"source/img/**/*.svg",
+		"source/sass/**/*.scss"
+	],
+	"browserslist": [
+		"last 2 versions",
+		"not dead"
+	],
+	"engines": {
+		"node": "18",
+		"npm": "9"
+	},
+	"type": "module"
+}
