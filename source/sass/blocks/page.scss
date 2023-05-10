@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+
+.page__body {
+	font-family: "PT Sans", sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+	text-transform: uppercase;
+	color: $color-black;
+	margin: 0 auto;
+	max-width: 1200px;
+}

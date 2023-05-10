@@ -1,0 +1,63 @@
+.page-content {
+	position: relative;
+
+	@media (max-width: $mobile-width-only) {
+		&::after {
+			position: relative;
+			display: block;
+			content: "";
+			background: url("../img/intro-triangle-small.svg");
+			width: 100%;
+			background-position-x: 50%;
+			height: 37px;
+			left: 0;
+			top: 100%;
+			background-repeat: no-repeat;
+			background-color: $color-accent;
+		}
+	}
+}
+
+.page-content__title {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 26px;
+	padding: 39px 50px 35px;
+}
+
+.page-content__description {
+	padding: 0 50px 33px;
+}
+
+.page-content__title,
+.page-content__description {
+	text-align: center;
+
+	@include reset("heading");
+}
+
+.page-content__cover {
+	position: relative;
+	background-image: url("../img/back-desktop.jpg");
+	background-repeat: no-repeat;
+	min-height: 384px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		background: url("../img/intro-triangle.svg");
+		width: 100%;
+		background-position-x: 50%;
+		height: 100%;
+		left: 0;
+		top: calc(100% - 57px);
+		background-repeat: no-repeat;
+	}
+}
+
+.page-content__cover-image {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 90px;
+}

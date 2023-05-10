@@ -1,0 +1,22 @@
+.booking {
+	padding: 39px 30px 49px;
+	text-align: center;
+}
+
+.booking__title,
+.booking__description {
+	@include reset("heading");
+}
+
+
+.booking__title {
+	font-size: 18px;
+	line-height: 21px;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+
+.booking__description {
+	margin-bottom: 32px;
+}
+

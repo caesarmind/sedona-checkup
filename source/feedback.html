@@ -6,38 +6,35 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sedona</title>
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="page page__body">
 	<header class="page-header">
-
 		<nav class="page-header__nav main-nav">
-
-			<a class="page-header__logo" href="index.html">
-				<span class="visually-hidden">Site Logo</span>
-				<img src="images/logo.svg" width="226" height="30" alt="Logo of Sedona">
+			<a class="main-nav__logo" href="index.html">
+				<span class="visually-hidden">Go back to homepage</span>
+				<img src="img/logo.svg" width="185" height="96" alt="Logo of Sedona">
 			</a>
-
-			<button class="main-nav__toggle" type="button">
-				<svg class="main-nav__icon" width="32" height="32" viewBox="0 0 32 32">
-					<path d="M4 6h24v2H4V6Zm0 18h24v2H4v-2Zm0-9h24v2H4v-2Z"></path>
-				</svg>
+			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
 				<span class="visually-hidden">Open Side Navigation</span>
 			</button>
-
-			<div class="side-nav side-nav--inactive">
-				<ul class="side-nav__list">
-					<li class="side-nav__item">
-						<a class="side-nav__link" href="#">Главная</a>
+			<div class="navigation navigation--inactive" id="navigation">
+				<button class="navigation__close" type="button">
+					<span class="visually-hidden">Close Side Navigation</span>
+				</button>
+				<ul class="navigation__list">
+					<li class="navigation__item">
+						<a class="navigation__link" href="#">Главная</a>
 					</li>
-					<li class="side-nav__item">
-						<a class="main-nav__link" href="#">Фото и видео</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#">Фото и видео</a>
 					</li>
-					<li class="side-nav__item">
-						<a class="side-nav__link" href="#">Форма Отзыва</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#">Форма отзыва</a>
 					</li>
-					<li class="side-nav__item">
-						<a class="side-nav__link" href="#">HTML ACADEMY</a>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#">HTML Academy</a>
 					</li>
 				</ul>
 			</div>
@@ -78,11 +75,12 @@
 				<legend class="form__title">Контактная информация:</legend>
 
 				<label for="phone-number">Контактный телефон*:</label>
-				<input class="form-field form__field--phone" type="number" id="phone-number" name="phone-number"
+				<input class="form__field form__field--phone" type="number" id="phone-number" name="phone-number"
 					placeholder="Введите телефон">
 
 				<label for="e-mail">Электронная почта*:</label>
-				<input class="form__field--email" type="email" id="e-mail" name="email" placeholder="Введите e-mail">
+				<input class="form__field form__field--email" type="email" id="e-mail" name="email"
+					placeholder="Введите e-mail">
 
 			</fieldset>
 
@@ -93,8 +91,8 @@
 				<ul class="form__filter-list">
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="form__control-input visually-hidden" type="radio" name="impression"
-								value="positive" checked>
+							<input class="form__control-input visually-hidden" type="radio" name="impression" value="positive"
+								checked>
 							<span class="form__mark"></span>
 							<span class="form__label-title">Скорее положительное</span>
 						</label>
@@ -102,8 +100,7 @@
 
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="form__control-input visually-hidden" type="radio" name="impression"
-								value="negative">
+							<input class="form__control-input visually-hidden" type="radio" name="impression" value="negative">
 							<span class="form__mark"></span>
 							<span class="form__label-title">Скорее отрицательное</span>
 						</label>
@@ -111,8 +108,7 @@
 
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="form__control-input visually-hidden" type="radio" name="impression"
-								value="no-answer">
+							<input class="form__control-input visually-hidden" type="radio" name="impression" value="no-answer">
 							<span class="form__mark"></span>
 							<span class="form__label-title">Затрудняюсь ответить</span>
 						</label>
@@ -128,8 +124,8 @@
 				<ul class="form__filter-list">
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="visually-hidden control-input" type="checkbox" name="sightseeing"
-								value="bridge_of_devil" checked>
+							<input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="bridge_of_devil"
+								checked>
 							<span class="form__mark"></span>
 							<span class="form__label-title">Мост Дьявола</span>
 						</label>
@@ -137,8 +133,8 @@
 
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="visually-hidden control-input" type="checkbox" name="sightseeing"
-								value="kolokol_mountain" checked>
+							<input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="kolokol_mountain"
+								checked>
 							<span class="form__mark"></span>
 							<span class="form__label-title">Гора-Колокол</span>
 						</label>
@@ -146,8 +142,8 @@
 
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="visually-hidden control-input" type="checkbox" name="sightseeing"
-								value="slide_park" checked>
+							<input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="slide_park"
+								checked>
 							<span class="form__mark"></span>
 							<span class="form__label-title">Слайд-парк</span>
 						</label>
@@ -155,8 +151,7 @@
 
 					<li class="form__filter-item">
 						<label class="form__check-label">
-							<input class="visually-hidden control-input" type="checkbox" name="sightseeing"
-								value="red_rocks" checked>
+							<input class="visually-hidden control-input" type="checkbox" name="sightseeing" value="red_rocks" checked>
 							<span class="form__mark"></span>
 							<span class="form__label-title">Красные скалы</span>
 						</label>
@@ -212,19 +207,17 @@
 
 		<p class="page-footer__tag">#visitSEDONA</p>
 
-		<div class="page-footer__social social">
-			<ul class="social__list">
-				<li class="social__item">
-					<a href="#">Vkontakte</a>
-				</li>
-				<li class="social__item">
-					<a href="#">Telegram</a>
-				</li>
-				<li class="social__item">
-					<a href="#">Youtube</a>
-				</li>
-			</ul>
-		</div>
+		<ul class="page-footer__social social">
+			<li class="social__item">
+				<a href="#">Vkontakte</a>
+			</li>
+			<li class="social__item">
+				<a href="#">Telegram</a>
+			</li>
+			<li class="social__item">
+				<a href="#">Youtube</a>
+			</li>
+		</ul>
 
 		<div class="page-footer__copyright">
 			<p class="page-footer__copyright-title">Разработано</p>
