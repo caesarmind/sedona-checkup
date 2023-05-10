@@ -1,0 +1,19 @@
+.advantages__list {
+	@include listReset();
+}
+
+.advantages__item {
+	background-color: #eeeeee;
+
+	&--accent {
+		background-color: #81B3D2;
+	}
+
+	&--icon {
+		background-color: #ffffff;
+	}
+}
+
+.advantages__image {
+	background-color: #000000;
+}

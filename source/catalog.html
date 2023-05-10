@@ -14,18 +14,13 @@
 		<nav class="page-header__nav main-nav">
 
 			<a class="page-header__logo" href="index.html">
-				<span class="visually-hidden">Site Logo</span>
+				<span class="visually-hidden">Go back to homepage</span>
 				<img src="images/logo.svg" width="226" height="30" alt="Logo of Sedona">
 			</a>
 
-			<div class="main-nav__list">
-				<button class="main-nav__toggle" type="button">
-					<svg class="main-nav__icon" width="32" height="32" viewBox="0 0 32 32">
-						<path d="M4 6h24v2H4V6Zm0 18h24v2H4v-2Zm0-9h24v2H4v-2Z"></path>
-					</svg>
-					<span class="visually-hidden">Open Side Navigation</span>
-				</button>
-			</div>
+			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
+				<span class="visually-hidden">Open Side Navigation</span>
+			</button>
 
 			<div class="side-nav side-nav--inactive">
 				<button class="side-nav__close" type="button">
