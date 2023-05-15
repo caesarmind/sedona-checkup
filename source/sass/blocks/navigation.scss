@@ -1,31 +1,28 @@
 .navigation__list {
-	background-color: $color-accent;
-
 	@include reset("list");
 
-	@media (min-width: $tablet-width) {
+	@media ($tablet-desktop) {
 		display: flex;
 		flex-wrap: wrap;
-		background: none;
 	}
 }
 
 .navigation__item {
-	@media (max-width: $mobile-width-only) {
+	@media ($mobile) {
 		&:first-child a {
 			border-top: none;
 		}
 
 		&:last-child a {
 			border-bottom: none;
-			box-shadow: inset 0 -10px 10px -10px fade($color-black, 20%);
+			box-shadow: inset 0 -10px 10px -10px rgba($color-black, 0.2);
 		}
 	}
 
-	@media (min-width: $tablet-width) {
+	@media ($tablet-desktop) {
 		width: 20%;
 
-		&:nth-child(2) {
+		&:nth-child(4n+2) {
 			margin-right: 20%;
 		}
 	}
@@ -40,10 +37,15 @@
 	line-height: 26px;
 	text-decoration: none;
 	color: #ffffff;
-	border-top: 1px solid fade($color-black-light, 20%);
-	border-bottom: 1px solid fade($color-white, 20%);
 
-	@media (min-width: $tablet-width) {
+	@media ($mobile) {
+		border-top: 1px solid rgba($color-black-light, 0.2);
+		border-bottom: 1px solid rgba($color-white, 0.2);
+		background-color: $color-accent;
+	}
+
+	@media ($tablet-desktop) {
 		color: $color-black;
+		background-color: $color-white;
 	}
 }

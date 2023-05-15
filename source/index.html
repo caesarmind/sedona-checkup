@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sedona</title>
 	<link href="css/style.css" rel="stylesheet">
+	<script src="scripts/index.js" type="module"></script>
 </head>
 
 <body class="page__body">
@@ -14,10 +15,10 @@
 		<nav class="page-header__nav main-nav main-nav--closed main-nav--nojs">
 			<a class="main-nav__logo" href="index.html">
 				<span class="visually-hidden">Go back to homepage</span>
-				<img src="img/logo.svg" width="185" height="96" alt="Logo of Sedona">
+				<img src="img/logo.svg" width="185" height="96" alt="Logo of Sedona.">
 			</a>
 			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
-				<span class="visually-hidden">Open Side Navigation</span>
+				<span class="visually-hidden">Вернуться на главную страницу</span>
 			</button>
 			<div class="navigation" id="navigation">
 				<ul class="navigation__list">
@@ -41,16 +42,16 @@
 	<main>
 		<section class="page-content">
 			<div class="page-content__cover page-content__cover--big">
-				<img class="page-content__cover-image" src="img/intro-text.svg" width="282" height="214" alt="Landscape of Sedona">
+				<img class="page-content__cover-image" src="img/intro-text.svg" width="282" height="214" alt="Intro of Sedona.">
 			</div>
 
 			<h1 class="page-content__title">
-				СЕДОНА — небольшой<br>
-				городок в аризоне,<br>
+				СЕДОНА — небольшой
+				городок в аризоне,
 				заслуживающий большего!
 			</h1>
 			<p class="page-content__description">
-				Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
+				Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!
 			</p>
 
 		</section>
@@ -58,7 +59,6 @@
 			<h2 class="visually-hidden">Main features of Sedona</h2>
 			<ul class="advantages__list">
 				<li class="advantages__group">
-						<div class="advantages__card">
 							<div class="advantages__item advantages__item--accent">
 								<h3 class="advantages__title">
 									Настоящий городок
@@ -70,8 +70,7 @@
 									Седона не аттракцион для туристов, там течет своя жизнь
 								</p>
 							</div>
-							<img class="advantages__image" src="img/photo-city@1x.jpg" height="256px" width="100%" alt="Town look of Sedona">
-						</div>
+							<img class="advantages__image" src="img/photo-city@1x.jpg" height="256" width="512" alt="Town look of Sedona.">
 						<ul class="advantages__list">
 							<li class="advantages__item advantages__item--icon">
 								<h3 class="advantages__title">
@@ -100,20 +99,19 @@
 						</ul>
 				</li>
 				<li class="advantages__group">
-					<div class="advantages__card advantages__card--reverse">
-						<div class="advantages__item advantages__item--accent">
-							<h3 class="advantages__title">
-								Там есть мост дьявола
-							</h3>
-							<span class="advantages__number">
-								— №2 —
-							</span>
-							<p class="advantages__description">
-								Да, по нему можно пройти! Если вы осмелитесь, конечно
-							</p>
-						</div>
-						<img class="advantages__image" src="img/photo-bridge@1x.jpg" width="100%" height="256" alt="Devil's bridge in Sedona">
+					<div class="advantages__item advantages__item--accent">
+						<h3 class="advantages__title">
+							Там есть мост дьявола
+						</h3>
+						<span class="advantages__number">
+							— №2 —
+						</span>
+						<p class="advantages__description">
+							Да, по нему можно пройти! Если вы осмелитесь, конечно
+						</p>
 					</div>
+					<img class="advantages__image" src="img/photo-bridge@1x.jpg" width="512" height="256"
+						alt="Devil's bridge in Sedona.">
 				</li>
 
 				<li class="advantages__item">
@@ -187,24 +185,9 @@
 
 		<div class="page-footer__copyright">
 			<p class="page-footer__copyright-title">Разработано</p>
-			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27px" height="34px" alt="HTMLACADEMY author of PSD">
+			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
 		</div>
 
 	</footer>
-	<script>
-		let navMain = document.querySelector('.main-nav');
-		let navToggle = document.querySelector('.main-nav__toggle');
-
-		navMain.classList.remove('main-nav--nojs');
-		navToggle.addEventListener('click', function() {
-			if (navMain.classList.contains('main-nav--closed')){
-				navMain.classList.remove('main-nav--closed');
-				navMain.classList.add('main-nav--opened');
-			} else {
-				navMain.classList.add('main-nav--closed');
-				navMain.classList.remove('main-nav--opened');
-			}
-		});
-	</script>
 </body>
 </html>

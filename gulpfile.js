@@ -63,4 +63,4 @@ const lint = gulp.series(validateMarkup, lintBem, lintStyles);
 
 export { validateMarkup, lintBem, lintStyles, lint };
 //Default
-export default gulp.series(server, watcher);
+export default gulp.series(compileSass, server, watcher);

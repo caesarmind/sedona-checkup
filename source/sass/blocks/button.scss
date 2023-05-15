@@ -1,4 +1,5 @@
 .button {
+	font: inherit;
 	font-size: 18px;
 	line-height: 26px;
 	font-weight: 700;
@@ -6,4 +7,7 @@
 	background-color: $color-accent;
 	color: $color-white;
 	padding: 16px 50px;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
 }

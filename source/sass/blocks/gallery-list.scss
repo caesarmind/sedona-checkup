@@ -2,10 +2,8 @@
 	@include reset("list");
 }
 
-.gallery__title,
-.gallery__author,
-.gallery__like-count {
-	@include reset("heading");
+.gallery__author {
+	@include reset("content");
 }
 
 .gallery__img {
@@ -14,8 +12,12 @@
 
 .gallery__title {
 	font-weight: 700;
+
+	@include reset("content");
 }
 
 .gallery__like-count {
 	font-weight: 700;
+
+	@include reset("content");
 }

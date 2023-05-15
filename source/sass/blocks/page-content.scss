@@ -1,7 +1,8 @@
 .page-content {
 	position: relative;
+	text-align: center;
 
-	@media (max-width: $mobile-width-only) {
+	@media ($mobile) {
 		&::after {
 			position: relative;
 			display: block;
@@ -23,17 +24,14 @@
 	font-size: 18px;
 	line-height: 26px;
 	padding: 39px 50px 35px;
+
+	@include reset("content");
 }
 
 .page-content__description {
 	padding: 0 50px 33px;
-}
 
-.page-content__title,
-.page-content__description {
-	text-align: center;
-
-	@include reset("heading");
+	@include reset("content");
 }
 
 .page-content__cover {
@@ -41,6 +39,8 @@
 	background-image: url("../img/back-desktop.jpg");
 	background-repeat: no-repeat;
 	min-height: 384px;
+	display: flex;
+	justify-content: center;
 
 	&::after {
 		position: absolute;
@@ -48,16 +48,14 @@
 		background: url("../img/intro-triangle.svg");
 		width: 100%;
 		background-position-x: 50%;
-		height: 100%;
+		height: 57px;
 		left: 0;
-		top: calc(100% - 57px);
+		bottom: 0;
 		background-repeat: no-repeat;
 	}
 }
 
 .page-content__cover-image {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 90px;
+	min-height: 100%;
+	padding-top: 90px;
 }

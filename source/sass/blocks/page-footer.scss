@@ -3,8 +3,8 @@
 	justify-content: center;
 	padding: 38px 30px 23px;
 
-	@media (min-width: $tablet-width) {
-		display: flex;
+	@media ($tablet-desktop) {
+		grid-template-columns: 1fr 1fr 1fr;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -22,4 +22,5 @@
 	display: flex;
 	align-items: center;
 	gap: 13px;
+	justify-content: flex-end;
 }

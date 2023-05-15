@@ -17,6 +17,8 @@ $color-black: #000000;
 $color-black-light: #010101;
 
 // Viewports
-$tablet-width: 768px;
-$desktop-width: 1200px;
-$mobile-width-only: 767px;
+$mobile: "max-width: 767px";
+$tablet-mobile: "max-width: 1199px";
+$tablet-desktop: "min-width: 768px";
+$tablet: "min-width: 768px) and (max-width: 1199px";
+$desktop: "min-width: 1200px";
