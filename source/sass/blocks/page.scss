@@ -1,12 +1,12 @@
 .page__body {
-	font-family: "PT Sans", sans-serif;
-	font-size: 14px;
-	line-height: 21px;
-	text-transform: uppercase;
-	color: $color-black;
-	margin: 0 auto;
-	max-width: 1200px;
 	display: grid;
 	grid-template-rows: min-content 1fr min-content;
+	max-width: 1200px;
 	min-height: 100vh;
+	margin: 0 auto;
+	font-size: 14px;
+	line-height: 21px;
+	font-family: "PT Sans", sans-serif;
+	color: $color-black;
+	text-transform: uppercase;
 }
