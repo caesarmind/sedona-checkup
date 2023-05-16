@@ -1,13 +1,13 @@
 .button {
+	box-sizing: border-box;
+	padding: 16px 50px;
 	font: inherit;
+	font-weight: 700;
 	font-size: 18px;
 	line-height: 26px;
-	font-weight: 700;
+	text-align: center;
+	color: $color-white;
 	text-transform: uppercase;
 	background-color: $color-accent;
-	color: $color-white;
-	padding: 16px 50px;
-	text-align: center;
 	cursor: pointer;
-	box-sizing: border-box;
 }

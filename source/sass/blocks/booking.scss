@@ -4,10 +4,10 @@
 }
 
 .booking__title {
+	margin-bottom: 15px;
+	font-weight: 700;
 	font-size: 18px;
 	line-height: 21px;
-	font-weight: 700;
-	margin-bottom: 15px;
 
 	@include reset("content");
 }

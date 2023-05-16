@@ -3,8 +3,8 @@
 
 	@media ($tablet-desktop) {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
 		grid-column: 1 / -1;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
@@ -23,12 +23,12 @@
 
 .advantages__item {
 	padding: 39px 15px 35px;
-	background-color: $color-white-dark;
 	text-align: center;
+	background-color: $color-white-dark;
 
 	&--accent {
-		background-color: $color-accent;
 		color: $color-white;
+		background-color: $color-accent;
 	}
 
 	&--icon {
@@ -41,10 +41,10 @@
 }
 
 .advantages__title {
+	padding-bottom: 11px;
+	font-weight: 700;
 	font-size: 18px;
 	line-height: 26px;
-	font-weight: 700;
-	padding-bottom: 11px;
 
 	@include reset("content");
 }
@@ -60,9 +60,10 @@
 }
 
 .advantages__image {
+	width: 100%;
 	background-color: $color-accent-extra-dark;
 	object-fit: cover;
-	width: 100%;
+
 
 	@media ($tablet-desktop) {
 		grid-column: span 2;

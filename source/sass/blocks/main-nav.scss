@@ -5,10 +5,10 @@
 
 .main-nav__logo {
 	position: absolute;
-	left: 50%;
 	top: 0;
-	transform: translateX(-50%);
+	left: 50%;
 	z-index: 1;
+	transform: translateX(-50%);
 
 	img {
 		display: block;
@@ -17,14 +17,14 @@
 
 .main-nav__toggle {
 	position: absolute;
-	border: none;
 	top: 0;
 	right: 0;
-	height: 56px;
-	width: 64px;
-	background: transparent;
-	cursor: pointer;
 	z-index: 10;
+	width: 64px;
+	height: 56px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
 
 	@media ($tablet-desktop) {
 		display: none;
@@ -36,11 +36,11 @@
 		&::before {
 			content: "";
 			position: absolute;
-			background-color: $color-accent;
-			right: 20px;
 			top: 17px;
+			right: 20px;
 			width: 23px;
 			height: 4px;
+			background-color: $color-accent;
 			box-shadow: 0 9px 0 $color-accent, 0 18px 0 0 $color-accent;
 		}
 	}
@@ -58,9 +58,9 @@
 			position: absolute;
 			top: 23px;
 			right: 20px;
-			background-color: $color-white;
 			width: 23px;
 			height: 4px;
+			background-color: $color-white;
 		}
 
 		&::before {
@@ -75,10 +75,10 @@
 	.navigation {
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
-		display: block;
+		left: 0;
 		z-index: 2;
+		display: block;
 	}
 }
 

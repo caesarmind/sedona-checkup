@@ -30,18 +30,19 @@
 
 .navigation__link {
 	display: block;
-	text-align: center;
 	padding: 14px 17px 13px;
 	font-weight: 700;
-	text-transform: uppercase;
 	line-height: 26px;
-	text-decoration: none;
+	text-align: center;
 	color: #ffffff;
+	text-transform: uppercase;
+	text-decoration: none;
+
 
 	@media ($mobile) {
+		background-color: $color-accent;
 		border-top: 1px solid rgba($color-black-light, 0.2);
 		border-bottom: 1px solid rgba($color-white, 0.2);
-		background-color: $color-accent;
 	}
 
 	@media ($tablet-desktop) {
