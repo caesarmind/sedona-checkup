@@ -1,0 +1,14 @@
+.social {
+	@include reset("list");
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	justify-content: center;
+}
+
+.social__item {
+	width: 48px;
+	height: 48px;
+	background-color: $color-accent;
+}

@@ -1,0 +1,15 @@
+@mixin reset($type: "all") {
+	@if $type == "list" {
+		@include reset();
+		list-style: none;
+	}
+
+	@else if $type == "content" {
+		margin: 0;
+	}
+
+	@else {
+		margin: 0;
+		padding: 0;
+	}
+}

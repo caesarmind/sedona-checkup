@@ -1,0 +1,61 @@
+.page-content {
+	position: relative;
+	text-align: center;
+
+	@media ($mobile) {
+		&::after {
+			position: relative;
+			display: block;
+			content: "";
+			background: url("../img/intro-triangle-small.svg");
+			width: 100%;
+			background-position-x: 50%;
+			height: 37px;
+			left: 0;
+			top: 100%;
+			background-repeat: no-repeat;
+			background-color: $color-accent;
+		}
+	}
+}
+
+.page-content__title {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 26px;
+	padding: 39px 50px 35px;
+
+	@include reset("content");
+}
+
+.page-content__description {
+	padding: 0 50px 33px;
+
+	@include reset("content");
+}
+
+.page-content__cover {
+	position: relative;
+	background-image: url("../img/back-desktop.jpg");
+	background-repeat: no-repeat;
+	min-height: 384px;
+	display: flex;
+	justify-content: center;
+
+	&::after {
+		position: absolute;
+		content: "";
+		background: url("../img/intro-triangle.svg");
+		width: 100%;
+		background-position-x: 50%;
+		height: 57px;
+		left: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+	}
+}
+
+.page-content__cover-image {
+	min-height: 100%;
+	padding-top: 90px;
+}

@@ -3,6 +3,14 @@
 
   "rules": {
     "declaration-no-important": true,
-    "indentation": ["tab", {"ignore": ["inside-parens"]}]
+    "indentation": ["tab", {"ignore": ["inside-parens"]}],
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+				"if",
+				"else",
+				"mixin",
+				"include"
+      ]
+    }]
   }
 }

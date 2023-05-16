@@ -1,0 +1,26 @@
+.page-footer {
+	display: grid;
+	justify-content: center;
+	padding: 38px 30px 23px;
+
+	@media ($tablet-desktop) {
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.page-footer__tag {
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: 700;
+	color: $color-black;
+	text-decoration: none;
+}
+
+.page-footer__copyright {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	justify-content: flex-end;
+}
