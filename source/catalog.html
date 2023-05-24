@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,25 +7,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sedona</title>
 	<link href="css/style.css" rel="stylesheet">
+	<script src="scripts/index.js" type="module"></script>
 </head>
 
-<body class="page page__body">
+<body class="page__body">
 	<header class="page-header">
-		<nav class="page-header__nav main-nav">
+		<nav class="page-header__nav main-nav main-nav--closed main-nav--nojs">
 			<a class="main-nav__logo" href="index.html">
 				<span class="visually-hidden">Go back to homepage</span>
 				<img src="img/logo.svg" width="185" height="96" alt="Logo of Sedona.">
 			</a>
 			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
-				<span class="visually-hidden">Open Side Navigation</span>
+				<span class="visually-hidden">Open Navigation</span>
 			</button>
-			<div class="navigation navigation--inactive" id="navigation">
-				<button class="navigation__close" type="button">
-					<span class="visually-hidden">Close Side Navigation</span>
-				</button>
+			<div class="navigation" id="navigation">
 				<ul class="navigation__list">
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Главная</a>
+						<a class="navigation__link" href="index.html">Главная</a>
 					</li>
 					<li class="navigation__item">
 						<a class="navigation__link" href="#">Фото и видео</a>
@@ -59,47 +57,63 @@
 			<ul class="gallery__list">
 				<li class="gallery__item gallery__item--featured">
 					<img class="gallery__img" src="img/posters/photo-1-mobile.jpg" width="280" height="280" alt="Неродные просторы.">
-					<h3 class="gallery__title">Неродные просторы</h3>
-					<p class="gallery__author">Автор фото: Борис</p>
-					<button class="gallery__like" type="button">
-						<span class="visually-hidden">Like Photo</span>
-					</button>
-					<p class="gallery__like-count">1350</p>
+					<div class="gallery__content-wrapper">
+						<h3 class="gallery__title">Неродные просторы</h3>
+						<p class="gallery__author">Автор фото: Борис</p>
+						<div class="gallery__like">
+							<button class="gallery__like-btn" type="button">
+								<span class="visually-hidden">Like Photo</span>
+							</button>
+							<p class="gallery__like-count">1350</p>
+						</div>
+					</div>
 				</li>
 				<li class="gallery__item">
 					<img class="gallery__img" src="img/posters/photo-2-mobile.jpg" width="280" height="280" alt="Местная растительность.">
-					<h3 class="gallery__title">Местная растительность</h3>
-					<p class="gallery__author">Автор фото: Сергей</p>
-					<button class="gallery__like" type="button">
-						<span class="visually-hidden">Like Photo</span>
-					</button>
-					<p class="gallery__like-count">143</p>
+					<div class="gallery__content-wrapper">
+						<h3 class="gallery__title">Местная растительность</h3>
+						<p class="gallery__author">Автор фото: Сергей</p>
+						<div class="gallery__like">
+							<button class="gallery__like-btn" type="button">
+								<span class="visually-hidden">Like Photo</span>
+							</button>
+							<p class="gallery__like-count">143</p>
+						</div>
+					</div>
 				</li>
 				<li class="gallery__item">
 					<img class="gallery__img" src="img/posters/photo-3-mobile.jpg" width="280" height="280" alt="Дорога на север.">
-					<h3 class="gallery__title">Дорога на север</h3>
-					<p class="gallery__author">Автор фото: Петр</p>
-					<button class="gallery__like" type="button">
-						<span class="visually-hidden">Like Photo</span>
-					</button>
-					<p class="gallery__like-count">96</p>
+					<div class="gallery__content-wrapper">
+						<h3 class="gallery__title">Дорога на север</h3>
+						<p class="gallery__author">Автор фото: Петр</p>
+						<div class="gallery__like">
+							<button class="gallery__like-btn" type="button">
+								<span class="visually-hidden">Like Photo</span>
+							</button>
+							<p class="gallery__like-count">96</p>
+						</div>
+					</div>
 				</li>
 				<li class="gallery__item">
 					<img class="gallery__img" src="img/posters/photo-4-mobile.jpg" width="280" height="280" alt="Мост дьявола.">
-					<h3 class="gallery__title">Мост дьявола</h3>
-					<p class="gallery__author">Автор фото: Антон</p>
-					<button class="gallery__like" type="button">
-						<span class="visually-hidden">Like Photo</span>
-					</button>
-					<p class="gallery__like-count">254</p>
+					<div class="gallery__content-wrapper">
+						<h3 class="gallery__title">Мост дьявола</h3>
+						<p class="gallery__author">Автор фото: Антон</p>
+						<div class="gallery__like">
+							<button class="gallery__like-btn" type="button">
+								<span class="visually-hidden">Like Photo</span>
+							</button>
+							<p class="gallery__like-count">254</p>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</section>
-		<section class="video-block">
-			<h2 class="video-block__title">
+		<section class="video">
+			<h2 class="video__title">
 				Все еще сомневаетесь?
 			</h2>
-			<p class="video-block__description">
+			<p class="video__description">
 				Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
 			</p>
 			<!-- TODO video-->
