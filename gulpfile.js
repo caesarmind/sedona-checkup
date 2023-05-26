@@ -56,7 +56,7 @@ const validateMarkup = () => {
 // Watcher
 const watcher = () => {
 	gulp.watch('source/sass/**/*.scss', gulp.parallel(compileSass, lintStyles));
-	gulp.watch('source/**/*.html', gulp.parallel(validateMarkup, lintBem, browser.reload));
+	gulp.watch('source/**/*.html').on('change', gulp.series(validateMarkup, lintBem, browser.reload)); // Doesn't reload HTML?
 };
 
 const lint = gulp.series(validateMarkup, lintBem, lintStyles);

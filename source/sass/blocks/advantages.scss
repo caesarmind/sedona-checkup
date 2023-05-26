@@ -1,6 +1,23 @@
 .advantages__list {
 	@include reset("list");
 
+	@media ($mobile) {
+		&::before {
+			content: "";
+			position: relative;
+			top: 0;
+			bottom: 100%;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 37px;
+			background: url("../img/intro-triangle-small.svg");
+			background-color: $color-accent;
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+		}
+	}
+
 	@media ($tablet-desktop) {
 		display: grid;
 		grid-column: 1 / -1;
