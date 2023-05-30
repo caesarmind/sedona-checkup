@@ -2,7 +2,7 @@
 	@include reset("list");
 
 	@media ($mobile) {
-		&::before {
+		&--arrow::before {
 			content: "";
 			position: relative;
 			top: 0;
@@ -32,7 +32,7 @@
 	@media ($tablet-desktop) {
 		grid-template-columns: repeat(3, 1fr);
 
-		&:nth-of-type(2n) .advantages__image {
+		&:nth-of-type(2n) .advantages__img-wrapper {
 			order: -1;
 		}
 	}
@@ -76,13 +76,15 @@
 	@include reset("content");
 }
 
-.advantages__image {
-	width: 100%;
-	background-color: $color-accent-extra-dark;
-	object-fit: cover;
-
-
+.advantages__img-wrapper {
 	@media ($tablet-desktop) {
 		grid-column: span 2;
 	}
+}
+
+.advantages__image {
+	display: block;
+	width: 100%;
+	background-color: $color-accent-extra-dark;
+	object-fit: cover;
 }

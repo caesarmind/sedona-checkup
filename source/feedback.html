@@ -26,10 +26,10 @@
 						<a class="navigation__link" href="index.html">Главная</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Фото и видео</a>
+						<a class="navigation__link" href="catalog.html">Фото и видео</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Форма отзыва</a>
+						<a class="navigation__link" href="feedback.html">Форма отзыва</a>
 					</li>
 					<li class="navigation__item">
 						<a class="navigation__link" href="#">HTML Academy</a>
@@ -43,7 +43,7 @@
 
 		<section class="page-content">
 			<div class="page-content__cover">
-				<img class="page-content__cover-image" src="#" alt="">
+				<img class="page-content__cover-image" src="img/intro-inner.svg" width="229" height="39" alt="Text logo of Sedona.">
 			</div>
 
 			<h1 class="page-content__title">
@@ -61,16 +61,17 @@
 				<ul class="form__fieldlist">
 					<li class="form__item">
 						<label class="form__field-label" for="surname">Фамилия</label>
-						<input class="form__field" type="text" id="surname" name="surname" placeholder="Фамилия">
+						<input class="form__field" type="text" id="surname" name="surname" placeholder="Введите фамилия" required>
 					</li>
+
 					<li class="form__item">
 						<label class="form__field-label" for="name">Имя</label>
-						<input class="form__field" type="text" id="name" name="name" placeholder="Имя">
+						<input class="form__field" type="text" id="name" name="name" placeholder="Введите имя" required>
 					</li>
 
 					<li class="form__item">
 						<label class="form__field-label" for="middle-name">Отчество</label>
-						<input class="form__field" type="text" id="middle-name" name="middle-name" placeholder="Отчество">
+						<input class="form__field" type="text" id="middle-name" name="middle-name" placeholder="Введите отчество">
 					</li>
 				</ul>
 			</fieldset>
@@ -82,22 +83,19 @@
 					<li class="form__item">
 						<label class="form__field-label" for="phone-number">Контактный телефон*:</label>
 						<input class="form__field form__field--phone" type="number" id="phone-number" name="phone-number"
-							placeholder="Введите телефон">
+							placeholder="Введите телефон" required>
 
 
 					<li class="form__item">
 						<label class="form__field-label" for="e-mail">Электронная почта*:</label>
 						<input class="form__field form__field--email" type="email" id="e-mail" name="email"
-							placeholder="Введите e-mail">
+							placeholder="Введите e-mail" required>
 					</li>
 				</ul>
-
 			</fieldset>
 
 			<fieldset class="form__fieldset form__fieldset--impressions">
-
 				<legend class="form__title">Ваше общее впечатление:</legend>
-
 				<ul class="form__filter-list form__filter-list--impressions">
 					<li class="form__filter-item">
 						<label class="form__check-label">
@@ -123,11 +121,8 @@
 				</ul>
 
 			</fieldset>
-
 			<fieldset class="form__fieldset form__fieldset--sights">
-
 				<legend class="form__title">Посещенные достопримечательности:</legend>
-
 				<ul class="form__filter-list form__filter-list--sights">
 					<li class="form__filter-item">
 						<label class="form__check-label">
@@ -160,13 +155,13 @@
 						</label>
 					</li>
 				</ul>
-
 			</fieldset>
 
 			<fieldset class="form__fieldset form__fieldset--message">
 				<legend class="form__title">Опишите свои эмоции:</legend>
+				<label class="visually-hidden" for="feedback-message">Комментарий</label>
 				<textarea class="form__field form__field--message" name="feedback-message"
-					placeholder="Опишите подробно все свои восторги"></textarea>
+				id="feedback-message" placeholder="Опишите подробно все свои восторги"></textarea>
 			</fieldset>
 
 			<div class="form__button-wrapper">
@@ -224,10 +219,10 @@
 		</ul>
 
 
-		<div class="page-footer__copyright">
+		<a class="page-footer__copyright" href="#">
 			<p class="page-footer__copyright-title">Разработано</p>
 			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
-		</div>
+		</a>
 
 	</footer>
 </body>

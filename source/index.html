@@ -6,6 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sedona</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="static/favicons//safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 	<link href="css/style.css" rel="stylesheet">
 	<script src="scripts/index.js" type="module"></script>
 </head>
@@ -26,10 +33,10 @@
 						<a class="navigation__link" href="index.html">Главная</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Фото и видео</a>
+						<a class="navigation__link" href="catalog.html">Фото и видео</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Форма отзыва</a>
+						<a class="navigation__link" href="feedback.html">Форма отзыва</a>
 					</li>
 					<li class="navigation__item">
 						<a class="navigation__link" href="#">HTML Academy</a>
@@ -57,7 +64,7 @@
 		</section>
 		<section class="advantages">
 			<h2 class="visually-hidden">Main features of Sedona</h2>
-			<ul class="advantages__list">
+			<ul class="advantages__list advantages__list--arrow">
 				<li class="advantages__group">
 							<div class="advantages__item advantages__item--accent">
 								<h3 class="advantages__title">
@@ -70,7 +77,11 @@
 									Седона не аттракцион для туристов, там течет своя жизнь
 								</p>
 							</div>
-							<img class="advantages__image" src="img/photo-city@1x.jpg" height="256" width="512" alt="Town look of Sedona.">
+							<picture class="advantages__img-wrapper">
+								<source media="(min-width: 1200px)" srcset="img/posters/photo-city-desktop.jpg, img/posters/photo-city-desktop@2x.jpg 2x">
+								<source media="(min-width: 768px)" srcset="img/posters/photo-city-tablet.jpg, img/posters/photo-city-tablet@2x.jpg 2x">
+								<img class="advantages__image" src="img/posters/photo-city-mobile.jpg" srcset="img/posters/photo-city-mobile@2x.jpg 2x" height="260" width="320" alt="Town look of Sedona.">
+							</picture>
 						<ul class="advantages__list">
 							<li class="advantages__item advantages__item--icon">
 								<h3 class="advantages__title">
@@ -110,8 +121,12 @@
 							Да, по нему можно пройти! Если вы осмелитесь, конечно
 						</p>
 					</div>
-					<img class="advantages__image" src="img/photo-bridge@1x.jpg" width="512" height="256"
+					<picture class="advantages__img-wrapper">
+						<source media="(min-width: 1200px)" srcset="img/posters/photo-bridge-desktop.jpg, img/posters/photo-bridge-desktop@2x.jpg 2x">
+						<source media="(min-width: 768px)" srcset="img/posters/photo-bridge-tablet.jpg, img/posters/photo-bridge-tablet@2x.jpg 2x">
+						<img class="advantages__image" src="img/posters/photo-bridge-mobile.jpg" srcset="img/posters/photo-bridge-mobile@2x.jpg 2x" width="320" height="260"
 						alt="Devil's bridge in Sedona.">
+					</picture>
 				</li>
 
 				<li class="advantages__item">
@@ -127,7 +142,7 @@
 				</li>
 				<li class="advantages__item">
 					<h3 class="advantages__title">
-						КРАСИВАЯ ДОРОГА
+						Красивая дорога
 					</h3>
 					<p class="advantages__number">
 						— №4 —
@@ -183,10 +198,10 @@
 		</ul>
 
 
-		<div class="page-footer__copyright">
+		<a class="page-footer__copyright" href="#">
 			<p class="page-footer__copyright-title">Разработано</p>
 			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
-		</div>
+		</a>
 
 	</footer>
 </body>
