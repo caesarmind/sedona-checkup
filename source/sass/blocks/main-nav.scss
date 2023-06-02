@@ -45,8 +45,10 @@
 		}
 	}
 
-	.navigation__link {
-		display: none;
+	@media ($mobile) {
+		.navigation__link {
+			display: none;
+		}
 	}
 }
 

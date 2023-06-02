@@ -1,8 +1,8 @@
 .form {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 
 	@media ($tablet-desktop) {
+		grid-template-columns: 1fr 1fr;
 		padding: 0 60px;
 	}
 
@@ -30,12 +30,23 @@
 		}
 
 		&:first-child {
-			padding-right: 10%;
 			border-right: 1px solid $color-gray;
 		}
 
+		&:first-child .form__fieldlist {
+			padding-right: 44px;
+
+			@media ($desktop) {
+				padding-right: 63px;
+			}
+		}
+
 		&:nth-child(2) .form__fieldlist {
-			padding-left: 13.13%;
+			padding-left: 44px;
+
+			@media ($desktop) {
+				padding-left: 64px;
+			}
 		}
 	}
 
@@ -65,22 +76,18 @@
 }
 
 .form__item {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 }
 
 .form__field {
-	box-sizing: border-box;
-	max-width: 100%;
+
 	padding: 16px;
 	font: inherit;
 	font-weight: 700;
 	font-size: 18px;
 	background-color: $color-white-dark;
 	border: none;
-
-	@media ($tablet-desktop) {
-		max-width: 430px;
-	}
 
 	&--message {
 		height: 150px;
@@ -120,8 +127,9 @@
 }
 
 .form__field-label {
+	align-self: flex-start;
 	margin-top: 16px;
-	margin-left: 14px;
+	padding: 0 14px;
 }
 
 .form__check-label {
@@ -195,7 +203,7 @@
 		left: calc(50% - 8px);
 		width: 16px;
 		height: 16px;
-		background-color: $color-black;
+		mask: url("../img/sprite.svg#like");
 		border-radius: 50%;
 	}
 
@@ -219,6 +227,7 @@
 	@media ($tablet-desktop) {
 		display: flex;
 		justify-content: space-between;
+		gap: 20px;
 		width: 100%;
 		max-width: 768px;
 		margin: 48px auto;

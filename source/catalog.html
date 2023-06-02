@@ -26,10 +26,10 @@
 						<a class="navigation__link" href="index.html">Главная</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Фото и видео</a>
+						<a class="navigation__link" href="catalog.html">Фото и видео</a>
 					</li>
 					<li class="navigation__item">
-						<a class="navigation__link" href="#">Форма отзыва</a>
+						<a class="navigation__link" href="feedback.html">Форма отзыва</a>
 					</li>
 					<li class="navigation__item">
 						<a class="navigation__link" href="#">HTML Academy</a>
@@ -42,7 +42,7 @@
 	<main>
 		<section class="page-content">
 			<div class="page-content__cover">
-				<img class="page-content__cover-image" src="#" alt="">
+				<img class="page-content__cover-image" src="img/intro-inner.svg" width="229" height="39" alt="Text logo of Sedona.">
 			</div>
 
 			<h1 class="page-content__title">
@@ -56,52 +56,84 @@
 			<h2 class="visually-hidden">Gallery</h2>
 			<ul class="gallery__list">
 				<li class="gallery__item gallery__item--featured">
-					<img class="gallery__img" src="img/posters/photo-1-mobile.jpg" width="280" height="280" alt="Неродные просторы.">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/posters/photo-1-desktop.jpg, img/posters/photo-1-desktop@2x.jpg 2x">
+							<source media="(min-width: 768px)" srcset="img/posters/photo-1-tablet.jpg, img/posters/photo-1-tablet@2x.jpg 2x">
+							<img class="gallery__img" src="img/posters/photo-1-mobile.jpg" srcset="img/posters/photo-1-mobile@2x.jpg 2x" width="280" height="280" alt="Неродные просторы.">
+						</picture>
+					</a>
 					<div class="gallery__content-wrapper">
 						<h3 class="gallery__title">Неродные просторы</h3>
 						<p class="gallery__author">Автор фото: Борис</p>
 						<div class="gallery__like">
-							<button class="gallery__like-btn" type="button">
-								<span class="visually-hidden">Like Photo</span>
+							<button class="gallery__like-btn" type="button" aria-label="Add like to this photo">
+								<svg aria-hidden="true" width="23" height="21">
+									<use xlink:href="img/sprite.svg#like"></use>
+								</svg>
 							</button>
 							<p class="gallery__like-count">1350</p>
 						</div>
 					</div>
 				</li>
 				<li class="gallery__item">
-					<img class="gallery__img" src="img/posters/photo-2-mobile.jpg" width="280" height="280" alt="Местная растительность.">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/posters/photo-2-desktop.jpg, img/posters/photo-2-desktop@2x.jpg 2x">
+							<source media="(min-width: 768px)" srcset="img/posters/photo-2-tablet.jpg, img/posters/photo-2-tablet@2x.jpg 2x">
+							<img class="gallery__img" src="img/posters/photo-2-mobile.jpg" srcset="img/posters/photo-2-mobile@2x.jpg 2x" width="280" height="280" alt="Местная растительность.">
+						</picture>
+					</a>
 					<div class="gallery__content-wrapper">
 						<h3 class="gallery__title">Местная растительность</h3>
 						<p class="gallery__author">Автор фото: Сергей</p>
 						<div class="gallery__like">
-							<button class="gallery__like-btn" type="button">
-								<span class="visually-hidden">Like Photo</span>
+							<button class="gallery__like-btn" type="button" aria-label="Add like to this picture">
+								<svg aria-hidden="true"aria-hidden="true" width="23" height="21" >
+									<use xlink:href="img/sprite.svg#like"></use>
+								</svg>
 							</button>
 							<p class="gallery__like-count">143</p>
 						</div>
 					</div>
 				</li>
 				<li class="gallery__item">
-					<img class="gallery__img" src="img/posters/photo-3-mobile.jpg" width="280" height="280" alt="Дорога на север.">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/posters/photo-3-desktop.jpg, img/posters/photo-3-desktop@2x.jpg 2x">
+							<source media="(min-width: 768px)" srcset="img/posters/photo-3-tablet.jpg, img/posters/photo-3-tablet@2x.jpg 2x">
+							<img class="gallery__img" src="img/posters/photo-3-mobile.jpg" srcset="img/posters/photo-3-mobile@2x.jpg 2x" width="280" height="280" alt="Дорога на север.">
+						</picture>
+					</a>
 					<div class="gallery__content-wrapper">
 						<h3 class="gallery__title">Дорога на север</h3>
 						<p class="gallery__author">Автор фото: Петр</p>
 						<div class="gallery__like">
-							<button class="gallery__like-btn" type="button">
-								<span class="visually-hidden">Like Photo</span>
+							<button class="gallery__like-btn" type="button" aria-label="Add like to this picture">
+								<svg aria-hidden="true" width="23" height="21">
+									<use xlink:href="img/sprite.svg#like"></use>
+								</svg>
 							</button>
 							<p class="gallery__like-count">96</p>
 						</div>
 					</div>
 				</li>
 				<li class="gallery__item">
-					<img class="gallery__img" src="img/posters/photo-4-mobile.jpg" width="280" height="280" alt="Мост дьявола.">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/posters/photo-4-desktop.jpg, img/posters/photo-4-desktop@2x.jpg 2x">
+							<source media="(min-width: 768px)" srcset="img/posters/photo-4-tablet.jpg, img/posters/photo-4-tablet@2x.jpg 2x">
+							<img class="gallery__img" src="img/posters/photo-4-mobile.jpg" srcset="img/posters/photo-4-mobile@2x.jpg 2x" width="280" height="280" alt="Мост дьявола.">
+						</picture>
+					</a>
 					<div class="gallery__content-wrapper">
 						<h3 class="gallery__title">Мост дьявола</h3>
 						<p class="gallery__author">Автор фото: Антон</p>
 						<div class="gallery__like">
-							<button class="gallery__like-btn" type="button">
-								<span class="visually-hidden">Like Photo</span>
+							<button class="gallery__like-btn" type="button" aria-label="Add like to this picture">
+								<svg aria-hidden="true" width="23" height="21">
+									<use xlink:href="img/sprite.svg#like"></use>
+								</svg>
 							</button>
 							<p class="gallery__like-count">254</p>
 						</div>
@@ -136,12 +168,11 @@
 		</ul>
 
 
-		<div class="page-footer__copyright">
+		<a class="page-footer__copyright" href="https://htmlacademy.ru/">
 			<p class="page-footer__copyright-title">Разработано</p>
 			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
-		</div>
+		</a>
 
 	</footer>
 </body>
-
 </html>
