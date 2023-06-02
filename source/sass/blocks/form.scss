@@ -81,6 +81,7 @@
 }
 
 .form__field {
+
 	padding: 16px;
 	font: inherit;
 	font-weight: 700;
@@ -202,7 +203,7 @@
 		left: calc(50% - 8px);
 		width: 16px;
 		height: 16px;
-		background-color: $color-black;
+		mask: url("../img/sprite.svg#like");
 		border-radius: 50%;
 	}
 
@@ -226,6 +227,7 @@
 	@media ($tablet-desktop) {
 		display: flex;
 		justify-content: space-between;
+		gap: 20px;
 		width: 100%;
 		max-width: 768px;
 		margin: 48px auto;

@@ -29,6 +29,10 @@
 
 	&--featured {
 		grid-column: 1 / -1;
+
+		img {
+			height: auto;
+		}
 	}
 }
 
@@ -91,6 +95,9 @@
 .gallery__like-btn {
 	width: 23px;
 	height: 21px;
+	color: $color-white;
+	background: none;
+	border: none;
 }
 
 .gallery__like-count {

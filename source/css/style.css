@@ -60,13 +60,15 @@
   .advantages__group {
     grid-template-columns: repeat(3, 1fr);
   }
-  .advantages__group:nth-of-type(2n) .advantages__img-wrapper {
+  .advantages__group:nth-of-type(2n) .advantages__imsdasdasd {
     order: -1;
   }
 }
 
 .advantages__item {
+  position: relative;
   padding: 39px 15px 35px;
+  padding-left: 70px;
   text-align: center;
   background-color: #f2f2f2;
 }
@@ -74,12 +76,61 @@
   color: #ffffff;
   background-color: #81b3d2;
 }
-.advantages__item--icon {
-  background-color: #ffffff;
-}
 @media (min-width: 768px) {
   .advantages__item {
     padding: 40px 32px;
+  }
+}
+
+.advantages__icon {
+  padding-left: 60px;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .advantages__icon {
+    padding-top: 159px;
+    text-align: center;
+  }
+}
+.advantages__icon::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 18px;
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .advantages__icon::before {
+    top: 59px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.advantages__icon--house::before {
+  width: 39px;
+  height: 37px;
+  mask: url("../img/sprite.svg#house");
+}
+.advantages__icon--food::before {
+  width: 39px;
+  height: 37px;
+  mask: url("../img/sprite.svg#house");
+}
+@media (min-width: 768px) {
+  .advantages__icon--food::before {
+    width: 75px;
+    height: 72px;
+  }
+}
+.advantages__icon--present::before {
+  width: 39px;
+  height: 37px;
+  mask: url("../img/sprite.svg#food");
+}
+@media (min-width: 768px) {
+  .advantages__icon--present::before {
+    width: 75px;
+    height: 72px;
   }
 }
 
@@ -349,7 +400,7 @@
   left: calc(50% - 8px);
   width: 16px;
   height: 16px;
-  background-color: #000000;
+  mask: url("../img/sprite.svg#like");
   border-radius: 50%;
 }
 .form__control-input[type=checkbox]::before {
@@ -368,6 +419,7 @@
   .form__button-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     width: 100%;
     max-width: 768px;
     margin: 48px auto;
@@ -437,6 +489,9 @@
 .gallery__item--featured {
   grid-column: 1/-1;
 }
+.gallery__item--featured img {
+  height: auto;
+}
 
 .gallery__content-wrapper {
   position: relative;
@@ -499,6 +554,9 @@
 .gallery__like-btn {
   width: 23px;
   height: 21px;
+  color: #ffffff;
+  background: none;
+  border: none;
 }
 
 .gallery__like-count {
@@ -794,6 +852,8 @@
   justify-content: flex-end;
   align-items: center;
   gap: 13px;
+  color: #000000;
+  text-decoration: none;
 }
 
 .social {
@@ -810,6 +870,15 @@
   width: 48px;
   height: 48px;
   background-color: #81b3d2;
+}
+
+.social__item a {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
 }
 
 .video {

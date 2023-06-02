@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sedona</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 	<link rel="manifest" href="site.webmanifest">
-	<link rel="mask-icon" href="static/favicons//safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	<link href="css/style.css" rel="stylesheet">
@@ -82,8 +82,8 @@
 								<source media="(min-width: 768px)" srcset="img/posters/photo-city-tablet.jpg, img/posters/photo-city-tablet@2x.jpg 2x">
 								<img class="advantages__image" src="img/posters/photo-city-mobile.jpg" srcset="img/posters/photo-city-mobile@2x.jpg 2x" height="260" width="320" alt="Town look of Sedona.">
 							</picture>
-						<ul class="advantages__list">
-							<li class="advantages__item advantages__item--icon">
+						<ul class="advantages__list advantages__list--icon">
+							<li class="advantages__item advantages__icon advantages__icon--house">
 								<h3 class="advantages__title">
 									Жилье
 								</h3>
@@ -91,7 +91,7 @@
 									Рекомендуем пожить в настоящем мотеле, все как в кино!
 								</p>
 							</li>
-							<li class="advantages__item advantages__item--icon">
+							<li class="advantages__item advantages__icon advantages__icon--food">
 								<h3 class="advantages__title">
 									Еда
 								</h3>
@@ -99,7 +99,7 @@
 									Всегда заказывайте фирменный бургер, вы не разочаруетесь!
 								</p>
 							</li>
-							<li class="advantages__item advantages__item--icon">
+							<li class="advantages__item advantages__icon advantages__icon--present">
 								<h3 class="advantages__title">
 									Сувениры
 								</h3>
@@ -187,20 +187,34 @@
 
 		<ul class="page-footer__social social">
 			<li class="social__item">
-				<a href="#">Vkontakte</a>
+				<a href="#" aria-label="Go to our Vkontakte page">
+					<svg aria-hidden="true" width="24" height="14">
+					 <use xlink:href="img/sprite.svg#vk"></use>
+					</svg>
+				</a>
 			</li>
 			<li class="social__item">
-				<a href="#">Telegram</a>
+				<a href="#" aria-label="Go to our Telegram chanell">
+					<svg aria-hidden="true" width="21" height="18">
+						<use xlink:href="img/sprite.svg#telegram"></use>
+					 </svg>
+				</a>
 			</li>
 			<li class="social__item">
-				<a href="#">Youtube</a>
+				<a href="#" aria-label="Go to our Youtube Channel">
+					<svg aria-hidden="true" width="20" height="14">
+						<use xlink:href="img/sprite.svg#youtube"></use>
+					 </svg>
+				</a>
 			</li>
 		</ul>
 
 
-		<a class="page-footer__copyright" href="#">
+		<a class="page-footer__copyright" href="https://htmlacademy.ru/" aria-label="Site of HTMLAcademy">
 			<p class="page-footer__copyright-title">Разработано</p>
-			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
+			<svg class="page-footer__copyright-img" width="27" height="34">
+				<use xlink:href="img/sprite.svg#copyright"></use>
+			</svg>
 		</a>
 
 	</footer>
