@@ -198,11 +198,13 @@
 	&:checked::after {
 		content: "";
 		position: absolute;
-		top: calc(50% - 8px);
-		left: calc(50% - 8px);
+		top: 50%;
+		left: 50%;
 		width: 16px;
 		height: 16px;
+		background-color: $color-black;
 		border-radius: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	// Customization for checkboxes
@@ -212,8 +214,10 @@
 		}
 
 		&:checked::after {
-			mask: url("../img/sprite.svg#like");
-			-webkit-mask: url("../img/sprite.svg#like");
+			width: 22px;
+			height: 16px;
+			mask: url("../img/sprite.svg#tick");
+			border-radius: 4px;
 		}
 	}
 }

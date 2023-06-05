@@ -60,7 +60,7 @@
   .advantages__group {
     grid-template-columns: repeat(3, 1fr);
   }
-  .advantages__group:nth-of-type(2n) .advantages__imsdasdasd {
+  .advantages__group:nth-of-type(2n) .advantages__img-wrapper {
     order: -1;
   }
 }
@@ -390,18 +390,23 @@
 .form__control-input:checked::after {
   content: "";
   position: absolute;
-  top: calc(50% - 8px);
-  left: calc(50% - 8px);
+  top: 50%;
+  left: 50%;
   width: 16px;
   height: 16px;
+  background-color: #000000;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 .form__control-input[type=checkbox]::before {
   border-radius: 4px;
 }
 .form__control-input[type=checkbox]:checked::after {
-  mask: url("../img/sprite.svg#like");
-  -webkit-mask: url("../img/sprite.svg#like");
+  width: 22px;
+  height: 16px;
+  -webkit-mask: url("../img/sprite.svg#tick");
+          mask: url("../img/sprite.svg#tick");
+  border-radius: 4px;
 }
 
 .form__button-wrapper {

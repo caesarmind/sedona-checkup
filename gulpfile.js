@@ -7,6 +7,7 @@ import scssSyntax from 'postcss-scss';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import { htmlValidator } from 'gulp-w3c-html-validator';
+import webp from 'gulp-webp';
 
 // Server
 const server = (done) => {
@@ -57,6 +58,15 @@ const validateMarkup = () => {
 	.pipe(htmlValidator.reporter({throwErrors: true}));
 }
 
+// Convert to WebP
+const createWebp = () => {
+  return gulp.src("source/img/**/*.{png,jpg}")
+    .pipe(webp({ quality: 90 }))
+    .pipe(gulp.dest(function (file) {
+      return file.base;
+    }));
+};
+
 // Watcher
 const watcher = () => {
 	gulp.watch('source/sass/**/*.scss', gulp.parallel(compileSass, lintStyles));
@@ -65,6 +75,6 @@ const watcher = () => {
 
 const lint = gulp.series(validateMarkup, lintBem, lintStyles);
 
-export { validateMarkup, lintBem, lintStyles, lint };
+export { validateMarkup, lintBem, lintStyles, lint, createWebp };
 //Default
 export default gulp.series(compileSass, server, watcher);
