@@ -4,8 +4,10 @@ import postcss from 'gulp-postcss';
 import stylelint from 'stylelint';
 import bemlinter from 'gulp-html-bemlinter';
 import scssSyntax from 'postcss-scss';
+import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import { htmlValidator } from 'gulp-w3c-html-validator';
+import webp from 'gulp-webp';
 
 // Server
 const server = (done) => {
@@ -25,6 +27,9 @@ const compileSass = () => {
 	return gulp
 		.src('source/sass/*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss([
+			autoprefixer()
+		]))
 		.pipe(gulp.dest('source/css'))
 		.pipe(browser.reload({ stream: true }));
 }
@@ -53,6 +58,15 @@ const validateMarkup = () => {
 	.pipe(htmlValidator.reporter({throwErrors: true}));
 }
 
+// Convert to WebP
+const createWebp = () => {
+  return gulp.src("source/img/**/*.{png,jpg}")
+    .pipe(webp({ quality: 90 }))
+    .pipe(gulp.dest(function (file) {
+      return file.base;
+    }));
+};
+
 // Watcher
 const watcher = () => {
 	gulp.watch('source/sass/**/*.scss', gulp.parallel(compileSass, lintStyles));
@@ -61,6 +75,6 @@ const watcher = () => {
 
 const lint = gulp.series(validateMarkup, lintBem, lintStyles);
 
-export { validateMarkup, lintBem, lintStyles, lint };
+export { validateMarkup, lintBem, lintStyles, lint, createWebp };
 //Default
 export default gulp.series(compileSass, server, watcher);

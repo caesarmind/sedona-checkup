@@ -32,7 +32,7 @@
 	@media ($tablet-desktop) {
 		grid-template-columns: repeat(3, 1fr);
 
-		&:nth-of-type(2n) .advantages__imsdasdasd {
+		&:nth-of-type(2n) .advantages__img-wrapper {
 			order: -1;
 		}
 	}
@@ -57,8 +57,10 @@
 }
 
 .advantages__icon {
-	padding-left: 60px;
-	text-align: left;
+	@media ($mobile) {
+		padding-left: 60px;
+		text-align: left;
+	}
 
 	@media ($tablet-desktop) {
 		padding-top: 159px;
@@ -70,41 +72,28 @@
 		position: absolute;
 		top: 25px;
 		left: 18px;
-		background-color: $color-black;
+		width: 40px;
+		height: 40px;
+		background-color: $color-accent;
 
 		@media ($tablet-desktop) {
 			top: 59px;
-			left: 50%;
-			transform: translateX(-50%);
+			left: calc(50% - 40px);
+			width: 80px;
+			height: 80px;
 		}
 	}
 
 	&--house::before {
-		width: 39px;
-		height: 37px;
-		mask: url("../img/sprite.svg#house");
+		mask-image: url("../img/sprite.svg#house");
 	}
 
 	&--food::before {
-		width: 39px;
-		height: 37px;
-		mask: url("../img/sprite.svg#house");
-
-		@media ($tablet-desktop) {
-			width: 75px;
-			height: 72px;
-		}
+		mask-image: url("../img/sprite.svg#food");
 	}
 
 	&--present::before {
-		width: 39px;
-		height: 37px;
-		mask: url("../img/sprite.svg#food");
-
-		@media ($tablet-desktop) {
-			width: 75px;
-			height: 72px;
-		}
+		mask-image: url("../img/sprite.svg#present");
 	}
 }
 

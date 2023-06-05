@@ -1,16 +1,18 @@
 {
 	"devDependencies": {
 		"@htmlacademy/editorconfig-cli": "^1.0.0",
+		"autoprefixer": "^10.4.14",
 		"browser-sync": "^2.29.1",
 		"gulp": "^4.0.2",
 		"gulp-dart-sass": "^1.1.0",
 		"gulp-html-bemlinter": "^2.1.3",
 		"gulp-postcss": "^9.0.1",
 		"gulp-w3c-html-validator": "^5.2.0",
+		"gulp-webp": "^4.0.1",
 		"postcss-scss": "^4.0.6",
 		"stylelint": "^14.16.1",
 		"stylelint-config-htmlacademy": "^1.1.4",
-		"stylelint-order-htmlacademy": "2.0.6"
+		"stylelint-order-htmlacademy": "^2.0.6"
 	},
 	"scripts": {
 		"start": "gulp",
