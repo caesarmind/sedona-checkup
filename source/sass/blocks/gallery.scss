@@ -93,11 +93,13 @@
 }
 
 .gallery__like-btn {
+	mask: url("../img/sprite.svg#like");
 	width: 23px;
 	height: 21px;
 	color: $color-white;
-	background: none;
+	background-color: $color-white;
 	border: none;
+	cursor: pointer;
 }
 
 .gallery__like-count {

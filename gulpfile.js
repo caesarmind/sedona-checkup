@@ -4,6 +4,7 @@ import postcss from 'gulp-postcss';
 import stylelint from 'stylelint';
 import bemlinter from 'gulp-html-bemlinter';
 import scssSyntax from 'postcss-scss';
+import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import { htmlValidator } from 'gulp-w3c-html-validator';
 
@@ -25,6 +26,9 @@ const compileSass = () => {
 	return gulp
 		.src('source/sass/*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss([
+			autoprefixer()
+		]))
 		.pipe(gulp.dest('source/css'))
 		.pipe(browser.reload({ stream: true }));
 }

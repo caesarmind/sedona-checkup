@@ -81,7 +81,6 @@
 }
 
 .form__field {
-
 	padding: 16px;
 	font: inherit;
 	font-weight: 700;
@@ -203,7 +202,6 @@
 		left: calc(50% - 8px);
 		width: 16px;
 		height: 16px;
-		mask: url("../img/sprite.svg#like");
 		border-radius: 50%;
 	}
 
@@ -214,7 +212,8 @@
 		}
 
 		&:checked::after {
-			border-radius: 4px;
+			mask: url("../img/sprite.svg#like");
+			-webkit-mask: url("../img/sprite.svg#like");
 		}
 	}
 }
