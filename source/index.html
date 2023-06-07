@@ -14,7 +14,6 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	<link href="css/style.css" rel="stylesheet">
-	<script src="scripts/index.js" type="module"></script>
 </head>
 
 <body class="page__body">
@@ -199,7 +198,7 @@
 			<li class="social__item">
 				<a class="social__link" href="#" aria-label="Go to our Vkontakte page">
 					<svg aria-hidden="true" width="24" height="24">
-					 <use xlink:href="img/sprite.svg#vk"></use>
+						<use xlink:href="img/sprite.svg#vk"></use>
 					</svg>
 				</a>
 			</li>
@@ -207,14 +206,14 @@
 				<a class="social__link" href="#" aria-label="Go to our Telegram chanell">
 					<svg aria-hidden="true" width="24" height="24">
 						<use xlink:href="img/sprite.svg#telegram"></use>
-					 </svg>
+					</svg>
 				</a>
 			</li>
 			<li class="social__item">
 				<a class="social__link" href="#" aria-label="Go to our Youtube Channel">
 					<svg aria-hidden="true" width="24" height="24">
 						<use xlink:href="img/sprite.svg#youtube"></use>
-					 </svg>
+					</svg>
 				</a>
 			</li>
 		</ul>
@@ -226,5 +225,13 @@
 		</a>
 
 	</footer>
+	<script src="scripts/index.js" type="module"></script>
+	<script>
+		window.pixelperfect = {
+			breakpoints: [320, 768, 1200, 1280],
+			folder: 'static/pixelperfect'
+		};
+	</script>
+	<script src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js"></script>
 </body>
 </html>
