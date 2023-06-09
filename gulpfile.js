@@ -1,24 +1,28 @@
-import gulp from 'gulp';
-import sass from 'gulp-dart-sass';
-import postcss from 'gulp-postcss';
-import stylelint from 'stylelint';
-import bemlinter from 'gulp-html-bemlinter';
-import scssSyntax from 'postcss-scss';
-import autoprefixer from 'autoprefixer';
-import browser from 'browser-sync';
-import { htmlValidator } from 'gulp-w3c-html-validator';
-import webp from 'gulp-webp';
-import htmlmin from 'gulp-htmlmin';
-import csso from 'postcss-csso';
-import rename from 'gulp-rename';
-import gulpEsbuild from 'gulp-esbuild';
-import imagemin from 'gulp-imagemin';
 import { deleteAsync } from 'del';
-import { stacksvg } from "gulp-stacksvg"
+import { htmlValidator } from 'gulp-w3c-html-validator';
+import { stacksvg } from 'gulp-stacksvg';
+import autoprefixer from 'autoprefixer';
+import bemlinter from 'gulp-html-bemlinter';
+import browser from 'browser-sync';
+import csso from 'postcss-csso';
+import esbuild from 'gulp-esbuild';
 import eslint from 'gulp-eslint';
-import sortMediaQueries from 'postcss-sort-media-queries';
-import replace from 'gulp-replace';
+import gulp from 'gulp';
 import gulpif from 'gulp-if';
+import htmlmin from 'gulp-htmlmin';
+import imagemin from 'gulp-imagemin';
+import mozjpeg from 'imagemin-mozjpeg';
+import optipng from 'imagemin-optipng';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import replace from 'gulp-replace';
+import sass from 'gulp-dart-sass';
+import scssSyntax from 'postcss-scss';
+import sortMediaQueries from 'postcss-sort-media-queries';
+import stylelint from 'stylelint';
+import svgo from 'imagemin-svgo';
+import svgoConf from './svgo.config.js';
+import webp from 'gulp-webp';
 
 const { src, dest, series, parallel, watch } = gulp;
 const isDev = process.argv.includes('dev');
@@ -30,46 +34,40 @@ const outputDir = isBuild ? 'build' : 'dev';
 // Optimize Images - ONLY for build
 export const optimizeImages = () => {
 	return src('source/img/**/*.{jpg, png, svg}')
-		.pipe(imagemin())
-		.pipe(dest('build/img/'));
+		.pipe(imagemin([
+			mozjpeg(),
+			optipng(),
+			svgo(svgoConf)
+		]))
+		.pipe(dest('build/img'));
 }
 
 // Copy files - ONLY for build
-export const copyStatic = (done) => {
+export const copyStatic = () => {
 	return(src([
 		'source/static/**',
 		'!source/static/pixelperfect/**'
 	]))
-		.pipe(dest('build/'))
-		done();
-}
-
-export const copyFiles = (done) => {
-	return(src([
-		'source/img/**',
-		'!source/img/icons/**'
-	]))
-		.pipe(dest('build/img'))
-		done();
+		.pipe(dest('build/'));
 }
 
 // HTML Minification - ONLY for build
 export const minifyHtml = () => {
 	return src('source/*.html')
 		.pipe(
-			gulpif(isBuild, replace('css/style.css', 'css/style.min.css')))
+			gulpif(isBuild, replace(/(css\/)([\w.-]+)\.css/g, '$1$2.min.css'))) // renames *.css to *.min.css
 		.pipe(
 			gulpif(isBuild, replace('scripts/index.js', 'scripts/index.min.js')))
 		.pipe(
 			gulpif(isBuild, replace(/\s*<script>.*pixelperfect.*\.js"><\/script>/s, '')))
 		.pipe(htmlmin({ collapseWhitespace: true }))
-		.pipe(dest(`build`))
+		.pipe(dest(`build`));
 }
 
 // JS Minification and bundling - ONLY for build
 export const minifyJs = () => {
 	return src('source/scripts/index.js')
-		.pipe(gulpEsbuild({
+		.pipe(esbuild({
 			outfile: 'index.min.js',
 			bundle: true,
 			minify: true
@@ -101,14 +99,25 @@ export const compileSass = () => {
 
 // SVG Sprites
 export const stackSvg = () => {
-	return src('source/img/icons/**/*.svg')
-		.pipe(stacksvg({ output: 'sprite'}))
-		.pipe(dest(`${outputDir}/img`));
-}
+  return src('source/img/icons/**/*.svg')
+    .pipe(imagemin([
+      svgo(svgoConf) // Specify the plugin as a function call
+    ]))
+
+		// Ne poniatno pochemu ne rabotaet. Udali etot kod chtob uvidet.
+    .on('error', function (err) {
+      console.error('Error in gulp-imagemin:', err.message);
+      this.emit('end'); // Continue the Gulp task even if there is an error
+    })
+
+		//
+		.pipe(stacksvg({ output: 'sprite' }))
+    .pipe(dest(`${outputDir}/img`));
+};
 
 // Convert to WebP
 export const createWebp = () => {
-	return src("source/img/**/*.{png,jpg}")
+	return src(isBuild ? "build/img/**/*.{png,jpg}" : "source/img/**/*.{png,jpg}")
 		.pipe(webp({ quality: 90 }))
 		.pipe(dest(`${outputDir}/img`));
 };
@@ -153,17 +162,6 @@ const reload = (done) => {
 	done();
 }
 
-
-
-// Watcher
-export const watcher = () => {
-	watch('source/sass/**/*.scss', parallel(compileSass, lintStyles));
-	watch('source/scripts/**/*.js', series(lintJs, reload));
-	watch('source/**/*.html').on('change', series(validateMarkup, lintBem, reload));
-	watch('source/sprite/*.svg').on('all', series(stackSvg, reload));
-};
-
-
 // Server
 const server = (done) => {
 	browser.init({
@@ -174,16 +172,19 @@ const server = (done) => {
 		ui: false,
 		notify: false,
 	});
-	done()
+
+	watch('source/sass/**/*.scss', parallel(compileSass, lintStyles));
+	watch('source/scripts/*.js', series(lintJs, reload));
+	watch('source/**/*.html').on('change', series(validateMarkup, lintBem, reload));
+	watch('source/sprite/*.svg').on('all', series(stackSvg, reload));
 }
 
 // build
 export const build = series(
 	clean,
-	copyStatic,
-	copyFiles,
 	optimizeImages,
 	parallel(
+		copyStatic,
 		createWebp,
 		stackSvg,
 		compileSass,
@@ -198,12 +199,9 @@ export const dev = series (
 	parallel(
 		compileSass,
 		stackSvg,
-		createWebp,
+		createWebp
 	),
-	gulp.series(
-    server,
-    watcher
-  )
+	server
 );
 
 export const lint = parallel(validateMarkup, lintBem, lintStyles, lintJs);

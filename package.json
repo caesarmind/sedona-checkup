@@ -19,6 +19,9 @@
 		"gulp-stacksvg": "^2.0.1",
 		"gulp-w3c-html-validator": "^5.2.0",
 		"gulp-webp": "^4.0.1",
+		"imagemin-mozjpeg": "^10.0.0",
+		"imagemin-pngquant": "^9.0.2",
+		"imagemin-svgo": "^10.0.1",
 		"pixelperfect-tool": "1.4.0",
 		"postcss-csso": "^6.0.1",
 		"postcss-scss": "^4.0.6",
@@ -40,7 +43,9 @@
 		"source/*.html",
 		"source/js/**/*.js",
 		"source/img/**/*.svg",
-		"source/sass/**/*.scss"
+		"source/sass/**/*.scss",
+		"source/static/*.xml",
+		"source/static/*.webmanifest"
 	],
 	"browserslist": [
 		"last 2 versions",

@@ -19,10 +19,10 @@ Mentorship repository (HTML &amp; CSS, level2)
   - `source/sass/`: SCSS stylesheets are stored in this directory. All stylesheets are minified and combined into a single file in the `build` directory.
     - `source/sass/global/`: Global styles specific to the project are stored in this directory.
     - `source/sass/blocks/`: BEM blocks have their individual directory in this folder.
-- `static/`: This directory is for static files such as images and files that don't require active processing during development. These files are served as they are without any modification.
-  - `static/fonts/`: Fonts used in the project are stored in this directory.
-  - `static/pixelperfect/`: This directory contains screenshots used by the Pixel Perfect plugin.
-  - `static/*.{ico,png,svg,webmanifest}`: This section includes favicon files in different formats and a web manifest configuration file. After generating the build, these files are moved to the root directory of the website.
+	- `source/static/`: This directory is for static files such as images and files that don't require active processing during development. These files are served as they are without any modification.
+  	- `source/static/fonts/`: Fonts used in the project are stored in this directory.
+  	- `source/static/pixelperfect/`: This directory contains screenshots used by the Pixel Perfect plugin.
+  	- `source/static/*.{ico,png,svg,webmanifest}`: This section includes favicon files in different formats and a web manifest configuration file. After generating the build, these files are moved to the root directory of the website.
 
 ## Development Environment Setup
 
@@ -43,18 +43,17 @@ Files that undergo processing:
   - *Note: In the development mode, the CSS files are not minified.*
 
 - **`source/img/` Directory**: Images in this directory (excluding those in the `/icons/` subdirectory) are converted to WebP format.
-  - This optimization step reduces image file sizes while maintaining quality.
 
 - **`source/img/icons/` Directory**: Icons in this directory are used to generate the `sprite.svg` file.
   - The `sprite.svg` file contains all the icons combined into a single SVG sprite.
 
 Other files used without processing:
 
-- **`static/` Directory**: This directory contains files that are used as-is without any modifications during development.
+- **`source/static/` Directory**: This directory contains files that are used as-is without any modifications during development.
 
 - **`source/scripts/` Directory**: JavaScript files in this directory are used without any processing.
 
-*Note: CSS, JS, and other files are not optimized during the development mode and are used as-is.*
+*Note: CSS, JS, and other files are not minified during the development mode.
 
 ## Generating Build
 
@@ -77,7 +76,7 @@ During the build process, the following optimizations are applied:
   - The CSS file is minified to reduce its file size.
   - Note: An unminified version of the CSS file is also generated, but it is not linked to HTML files.
 
-- **`source/scripts/modules/` Directory**: JavaScript files in this directory are minified and bundled into a single file named `index.js`.
+- **`source/scripts/modules/` Directory**: JavaScript files in this directory are bundled  into a single file named `index.js` and then minified.
   - This bundling process reduces the number of separate JavaScript files and improves performance.
 
 - **`source/*.html` Files**: HTML files are minified during the build process.
