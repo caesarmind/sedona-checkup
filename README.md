@@ -21,8 +21,8 @@ Mentorship repository (HTML &amp; CSS, level2)
     - `source/sass/blocks/`: BEM blocks have their individual directory in this folder.
 	- `source/static/`: This directory is for static files such as images and files that don't require active processing during development. These files are served as they are without any modification.
   	- `source/static/fonts/`: Fonts used in the project are stored in this directory.
-  	- `source/static/pixelperfect/`: This directory contains screenshots used by the Pixel Perfect plugin.
   	- `source/static/*.{ico,png,svg,webmanifest}`: This section includes favicon files in different formats and a web manifest configuration file. After generating the build, these files are moved to the root directory of the website.
+- `source/pixelperfect/`: This directory contains screenshots used by the Pixel Perfect plugin.
 
 ## Development Environment Setup
 

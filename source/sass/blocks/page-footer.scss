@@ -1,12 +1,19 @@
 .page-footer {
 	display: grid;
 	justify-content: center;
-	padding: 38px 60px 23px;
+	gap: 34px;
+	padding: 38px 60px 14px;
 
 	@media ($tablet-desktop) {
 		justify-content: space-between;
 		align-items: center;
 		grid-template-columns: 1fr 1fr 1fr;
+		gap: unset;
+		padding-top: 35px;
+	}
+
+	@media ($desktop) {
+		padding: 36px 120px 23px;
 	}
 }
 
@@ -16,11 +23,15 @@
 	line-height: 26px;
 	color: $color-black;
 	text-decoration: none;
+
+	@media ($mobile) {
+		text-align: center;
+	}
 }
 
 .page-footer__copyright {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	gap: 13px;
 	color: inherit;

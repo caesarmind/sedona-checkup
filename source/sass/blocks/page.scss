@@ -1,3 +1,7 @@
+.page {
+	background-color: $color-background;
+}
+
 .page__body {
 	display: grid;
 	grid-template-rows: min-content 1fr min-content;
@@ -9,4 +13,6 @@
 	font-family: "PT Sans", sans-serif;
 	color: $color-black;
 	text-transform: uppercase;
+	background-color: $color-white;
+	box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }

@@ -1,19 +1,39 @@
 .booking {
-	padding: 39px 30px 49px;
+	padding: 43px 18px 49px;
 	text-align: center;
+
+	@media ($tablet-desktop) {
+		padding-bottom: 58px;
+	}
 }
 
 .booking__title {
 	margin-bottom: 15px;
 	font-weight: 700;
-	font-size: 18px;
-	line-height: 21px;
+	font-size: 21px;
+	line-height: 18px;
 
 	@include reset("content");
+
+	@media ($tablet-desktop) {
+		font-size: 30px;
+	}
 }
 
 .booking__description {
+	@include reset("content");
+
+	margin-top: 24px;
 	margin-bottom: 32px;
 
-	@include reset("content");
+	@media ($tablet-desktop) {
+		margin-top: 35px;
+		margin-bottom: 48px;
+	}
+}
+
+.booking__button {
+	width: 100%;
+	max-width: 458px;
+	padding: 16px 20px;
 }

@@ -26,22 +26,20 @@
 			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
 				<span class="visually-hidden">Open Navigation</span>
 			</button>
-			<div class="navigation" id="navigation">
-				<ul class="navigation__list">
-					<li class="navigation__item">
-						<a class="navigation__link" href="index.html">Главная</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="catalog.html">Фото и видео</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="feedback.html">Форма отзыва</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">HTML Academy</a>
-					</li>
-				</ul>
-			</div>
+			<ul class="main-nav__navigation navigation" id="navigation">
+				<li class="navigation__item">
+					<a class="navigation__link" href="index.html">Главная</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="catalog.html">Фото и видео</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="feedback.html">Форма отзыва</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="#">HTML Academy</a>
+				</li>
+			</ul>
 		</nav>
 	</header>
 
@@ -83,7 +81,7 @@
 									<source type="image/webp" srcset="img/posters/photo-city-mobile.webp 1x, img/posters/photo-city-mobile@2x.webp 2x">
 									<source media="(min-width: 1200px)" srcset="img/posters/photo-city-desktop.jpg, img/posters/photo-city-desktop@2x.jpg 2x">
 									<source media="(min-width: 768px)" srcset="img/posters/photo-city-tablet.jpg, img/posters/photo-city-tablet@2x.jpg 2x">
-									<img class="advantages__image" src="img/posters/photo-city-mobile.jpg" srcset="img/posters/photo-city-mobile@2x.jpg 2x" height="260" width="320" alt="Town look of Sedona.">
+									<img class="advantages__image" src="img/posters/photo-city-mobile.jpg" srcset="img/posters/photo-city-mobile@2x.jpg 2x" width="320" height="256" alt="Town look of Sedona.">
 								</picture>
 							</div>
 						<ul class="advantages__list advantages__list--icon">
@@ -132,13 +130,13 @@
 							<source type="image/webp" srcset="img/posters/photo-bridge-mobile.webp 1x, img/posters/photo-bridge-mobile@2x.webp 2x">
 							<source media="(min-width: 1200px)" srcset="img/posters/photo-bridge-desktop.jpg, img/posters/photo-bridge-desktop@2x.jpg 2x">
 							<source media="(min-width: 768px)" srcset="img/posters/photo-bridge-tablet.jpg, img/posters/photo-bridge-tablet@2x.jpg 2x">
-							<img class="advantages__image" src="img/posters/photo-bridge-mobile.jpg" srcset="img/posters/photo-bridge-mobile@2x.jpg 2x" width="320" height="260"
+							<img class="advantages__image" src="img/posters/photo-bridge-mobile.jpg" srcset="img/posters/photo-bridge-mobile@2x.jpg 2x" width="320" height="256"
 							alt="Devil's bridge in Sedona.">
 						</picture>
 					</div>
 				</li>
 
-				<li class="advantages__item">
+				<li class="advantages__item advantages__item--border">
 					<h3 class="advantages__title">
 						Небольшая площадь
 					</h3>
@@ -149,7 +147,7 @@
 						Все интересные места находятся очень близко
 					</p>
 				</li>
-				<li class="advantages__item">
+				<li class="advantages__item advantages__item--border">
 					<h3 class="advantages__title">
 						Красивая дорога
 					</h3>
@@ -160,7 +158,7 @@
 						Ехать в седону из лас-вегаса совсем не скучно!
 					</p>
 				</li>
-				<li class="advantages__item">
+				<li class="advantages__item advantages__item--border">
 					<h3 class="advantages__title">
 						Мало туристов
 					</h3>
@@ -179,14 +177,24 @@
 			<h2 class="booking__title">Заинтересовались?</h2>
 			<p class="booking__description">
 				Укажите предполагаемые даты<br>
-				поездки, и мы покажем вам лучшие<br>
+				поездки, и мы покажем вам лучшие
 				предложения гостиниц в седоне</p>
 			<button class="booking__button button">Найти Гостиницу</button>
 		</section>
 
-		<section class="map">
+		<section class="map map--nojs">
 			<h2 class="visually-hidden">Address on the map</h2>
-			<!-- TODO map-->
+			<div class="map__container" id="map">
+				<picture>
+					<source type="image/webp" media="(min-width: 1200px)" srcset="img/map-desktop.webp 1x, img/map-desktop@2x.webp 2x">
+					<source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet.webp 1x, img/map-tablet@2x.webp 2x">
+					<source type="image/webp" srcset="img/map-mobile.webp 1x, img/map-mobile@2x.webp 2x">
+					<source media="(min-width: 1200px)" srcset="img/map-desktop.jpg, img/map-desktop@2x.jpg 2x">
+					<source media="(min-width: 768px)" srcset="img/map-tablet.jpg, img/map-tablet@2x.jpg 2x">
+					<img class="map__image" src="img/map-mobile.jpg" srcset="img/map-mobile@2x.jpg 2x" width="320" height="350"
+					alt="Sedonas' location on the map">
+				</picture>
+			</div>
 		</section>
 
 	</main>
@@ -225,13 +233,17 @@
 		</a>
 
 	</footer>
-	<script src="scripts/index.js" type="module"></script>
+
+	<script src="scripts/main.js" type="module"></script>
 	<script>
 		window.pixelperfect = {
 			breakpoints: [320, 768, 1280],
-			folder: 'pixelperfect'
+			folder: 'pixelperfect',
+			selector: 'html'
 		};
 	</script>
 	<script src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js"></script>
+
+
 </body>
 </html>

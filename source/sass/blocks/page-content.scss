@@ -3,7 +3,7 @@
 }
 
 .page-content__title {
-	padding: 39px 120px 35px;
+	padding: 33px 30px 35px;
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 26px;
@@ -11,17 +11,19 @@
 	@include reset("content");
 
 	@media ($tablet-desktop) {
+		padding: 39px 120px 30px;
 		padding-top: 47px;
 		font-size: 21px;
 	}
 
 	@media ($desktop) {
-		padding-top: 59px;
+		padding: 59px 300px 30px;
 	}
 }
 
 .page-content__description {
-	padding: 0 50px 33px;
+	padding: 0 30px 17px;
+	color: $color-black-extra-light;
 
 	@include reset("content");
 
@@ -38,7 +40,7 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
-	min-height: 214px;
+	min-height: 158px;
 	background-image: url("../img/back-mobile.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -69,7 +71,7 @@
 
 			@media ($tablet-desktop) {
 				padding-top: 77px;
-				padding-bottom: 80px;
+				padding-bottom: 92px;
 			}
 
 			@media ($desktop) {
@@ -95,5 +97,20 @@
 	@media ($tablet-desktop) {
 		width: 460px;
 		height: auto;
+	}
+}
+
+.page-content--inner {
+	.page-content__title {
+		padding-top: 37px;
+		padding-bottom: 23px;
+	}
+
+	.page-content__description {
+		padding: 0 20px 17px;
+	}
+
+	.page-content__cover-image {
+		padding-top: 52px;
 	}
 }

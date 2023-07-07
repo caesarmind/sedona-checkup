@@ -25,7 +25,6 @@ import svgoConf from './svgo.config.js';
 import webp from 'gulp-webp';
 
 const { src, dest, series, parallel, watch } = gulp;
-const isDev = process.argv.includes('dev');
 const isBuild = process.argv.includes('build');
 
 const outputDir = isBuild ? 'build' : 'dev';
@@ -35,8 +34,13 @@ const outputDir = isBuild ? 'build' : 'dev';
 export const optimizeImages = () => {
 	return src('source/img/**/*.{jpg, png, svg}')
 		.pipe(imagemin([
-			mozjpeg(),
-			optipng(),
+			mozjpeg({ quality: 75, progressive: true }),
+			optipng({
+				optimizationLevel: 3,
+				strip: true,
+				dithering: 1,
+				quality: [0.8, 0.9]
+			}),
 			svgo(svgoConf)
 		]))
 		.pipe(dest('build/img'));
@@ -54,25 +58,24 @@ export const copyStatic = () => {
 // HTML Minification - ONLY for build
 export const minifyHtml = () => {
 	return src('source/*.html')
+		.pipe(replace(/\/(.*?)\.css/g, '/$1.min.css')) // renames *.css to *.min.css
+		.pipe(replace(/\/(.*?)\.js/g, '/$1.min.js')) // renames *.js to *.min.js
+		.pipe(replace(/\s*<script>.*pixelperfect.*\.js"><\/script>/s, '')) // removes the script tag containing "pixelperfect"
 		.pipe(
-			gulpif(isBuild, replace(/(css\/)([\w.-]+)\.css/g, '$1$2.min.css'))) // renames *.css to *.min.css
-		.pipe(
-			gulpif(isBuild, replace('scripts/index.js', 'scripts/index.min.js')))
-		.pipe(
-			gulpif(isBuild, replace(/\s*<script>.*pixelperfect.*\.js"><\/script>/s, '')))
-		.pipe(htmlmin({ collapseWhitespace: true }))
-		.pipe(dest(`build`));
+			htmlmin({ collapseWhitespace: true })
+			)
+		.pipe(dest('build'));
 }
 
-// JS Minification and bundling - ONLY for build
+// JS Minification and bundling
 export const minifyJs = () => {
-	return src('source/scripts/index.js')
+	return src('source/scripts/main.js')
 		.pipe(esbuild({
-			outfile: 'index.min.js',
+			outfile: 'main.js',
 			bundle: true,
 			minify: true
 		}))
-		.pipe(dest(`build/scripts`));
+		.pipe(dest(`${outputDir}/scripts`));
 }
 
 // Removes builded files
@@ -99,20 +102,12 @@ export const compileSass = () => {
 
 // SVG Sprites
 export const stackSvg = () => {
-  return src('source/img/icons/**/*.svg')
-    .pipe(imagemin([
-      svgo(svgoConf) // Specify the plugin as a function call
-    ]))
-
-		// Ne poniatno pochemu ne rabotaet. Udali etot kod chtob uvidet.
-    .on('error', function (err) {
-      console.error('Error in gulp-imagemin:', err.message);
-      this.emit('end'); // Continue the Gulp task even if there is an error
-    })
-
-		//
+	return src('source/img/icons/**/*.svg')
+		.pipe(imagemin([
+		   svgo(svgoConf)
+		 ]))
 		.pipe(stacksvg({ output: 'sprite' }))
-    .pipe(dest(`${outputDir}/img`));
+		.pipe(dest(`${outputDir}/img`));
 };
 
 // Convert to WebP
@@ -174,9 +169,9 @@ const server = (done) => {
 	});
 
 	watch('source/sass/**/*.scss', parallel(compileSass, lintStyles));
-	watch('source/scripts/*.js', series(lintJs, reload));
-	watch('source/**/*.html').on('change', series(validateMarkup, lintBem, reload));
-	watch('source/sprite/*.svg').on('all', series(stackSvg, reload));
+	watch('source/scripts/**/*.js', series(lintJs, minifyJs, reload));
+	watch('source/*.html', series(validateMarkup, lintBem, reload));
+	watch('source/icons/*.svg').on('all', series(stackSvg, reload));
 }
 
 // build
@@ -185,12 +180,12 @@ export const build = series(
 	optimizeImages,
 	parallel(
 		copyStatic,
-		createWebp,
 		stackSvg,
 		compileSass,
 		minifyHtml,
 		minifyJs
-	)
+	),
+	createWebp
 );
 
 // dev
@@ -199,7 +194,8 @@ export const dev = series (
 	parallel(
 		compileSass,
 		stackSvg,
-		createWebp
+		createWebp,
+		minifyJs
 	),
 	server
 );
@@ -207,4 +203,4 @@ export const dev = series (
 export const lint = parallel(validateMarkup, lintBem, lintStyles, lintJs);
 
 //Default
-export default dev;
+export default server;

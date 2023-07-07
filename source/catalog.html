@@ -19,27 +19,25 @@
 			<button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="navigation">
 				<span class="visually-hidden">Open Navigation</span>
 			</button>
-			<div class="navigation" id="navigation">
-				<ul class="navigation__list">
-					<li class="navigation__item">
-						<a class="navigation__link" href="index.html">Главная</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="catalog.html">Фото и видео</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="feedback.html">Форма отзыва</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">HTML Academy</a>
-					</li>
-				</ul>
-			</div>
+			<ul class="main-nav__navigation navigation" id="navigation">
+				<li class="navigation__item">
+					<a class="navigation__link" href="index.html">Главная</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="catalog.html">Фото и видео</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="feedback.html">Форма отзыва</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="#">HTML Academy</a>
+				</li>
+			</ul>
 		</nav>
 	</header>
 
 	<main>
-		<section class="page-content">
+		<section class="page-content page-content--inner">
 			<div class="page-content__cover">
 				<img class="page-content__cover-image" src="img/intro-inner.svg" width="229" height="39" alt="Text logo of Sedona.">
 			</div>
@@ -177,7 +175,7 @@
 		</a>
 
 	</footer>
-	<script src="scripts/index.js" type="module"></script>
+	<script src="scripts/main.min.js" type="module"></script>
 	<script>
 		window.pixelperfect = {
 			breakpoints: [320, 768, 1280],

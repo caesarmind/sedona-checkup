@@ -1,16 +1,26 @@
-const svgoConf = {
-	plugins: [
-		{ removeDoctype: true },
-		{ removeXMLProcInst: true },
-		{ removeEditorsNSData: true },
-		{ removeMetadata: true },
-		{ removeComments: true },
-		{ removeDesc: true },
-		{ removeTitle: true },
-		{ removeUselessDefs: true },
-		{ removeEmptyAttrs: true },
-	],
+export default {
+  multipass: true,
+  plugins: [
+    ...[
+      'removeDoctype',
+      'removeXMLProcInst',
+      'removeEditorsNSData',
+      'removeMetadata',
+      'removeComments',
+      'removeDesc',
+      'removeTitle',
+      'removeUselessDefs',
+      'removeEmptyAttrs'
+    ].map((name) => ({
+      active: true,
+      name
+    })),
+    ...['cleanupNumericValues', 'convertPathData', 'convertTransform', 'cleanupListOfValues'].map((name) => ({
+      active: true,
+      name,
+      params: {
+        floatPrecision: 2
+      }
+    }))
+  ]
 };
-
-
-export default svgoConf;

@@ -1,7 +1,14 @@
 .advantages__list {
+	background-color: $color-gray-light;
+
 	@include reset("list");
 
 	@media ($mobile) {
+		&--icon {
+			padding-bottom: 50px;
+			background-color: $color-white;
+		}
+
 		&--arrow::before {
 			content: "";
 			position: relative;
@@ -15,6 +22,10 @@
 			background-color: $color-accent;
 			background-repeat: no-repeat;
 			background-position-x: 50%;
+		}
+
+		&--arrow > .advantages__item {
+			margin: 0 18px;
 		}
 	}
 
@@ -40,31 +51,59 @@
 
 .advantages__item {
 	position: relative;
-	padding: 39px 15px 35px;
-	padding-left: 70px;
+	padding: 26px 15px 24px;
 	text-align: center;
-	background-color: $color-white-dark;
 
-	&--accent {
-		color: $color-white;
-		background-color: $color-accent;
+
+	&--border {
+		&:not(:last-child) {
+			@media ($mobile) {
+				border-bottom: 1px solid $color-gray;
+			}
+		}
 	}
 
-
 	@media ($tablet-desktop) {
+		box-sizing: border-box;
+		min-height: 256px;
 		padding: 40px 32px;
+	}
+
+	@media ($desktop) {
+		padding-top: 45px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 20px;
+		left: 20px;
+		background-color: $color-gray-dark;
+	}
+
+	&--accent {
+		padding: 34px 15px 39px;
+		color: $color-white;
+		background-color: $color-accent;
+		border: none;
 	}
 }
 
 .advantages__icon {
 	@media ($mobile) {
-		padding-left: 60px;
+		padding-top: 31px;
+		padding-bottom: 0;
+		padding-left: 70px;
 		text-align: left;
 	}
 
 	@media ($tablet-desktop) {
 		padding-top: 159px;
-		text-align: center;
+	}
+
+	@media ($desktop) {
+		padding-top: 159px;
 	}
 
 	&::before {
@@ -98,22 +137,37 @@
 }
 
 .advantages__title {
-	padding-bottom: 11px;
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 26px;
 
 	@include reset("content");
+
+	@media ($tablet-desktop) {
+		padding: 0 60px;
+		font-size: 21px;
+	}
 }
 
 .advantages__number {
 	display: block;
-	padding-bottom: 17px;
+	margin-top: 11px;
+	margin-bottom: 17px;
 	text-align: center;
+
+	@media ($tablet) {
+		margin-top: 13px;
+		margin-bottom: 23px;
+	}
 }
 
 .advantages__description {
 	@include reset("content");
+	margin-top: 16px;
+
+	@media ($tablet-desktop) {
+		margin-top: 23px;
+	}
 }
 
 .advantages__img-wrapper {
@@ -125,6 +179,7 @@
 .advantages__image {
 	display: block;
 	width: 100%;
+	height: 260px;
 	background-color: $color-accent-extra-dark;
 	object-fit: cover;
 }

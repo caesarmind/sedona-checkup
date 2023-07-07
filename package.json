@@ -1,6 +1,6 @@
 {
 	"devDependencies": {
-		"@htmlacademy/editorconfig-cli": "^1.0.0",
+		"@htmlacademy/g": "^1.0.0",
 		"autoprefixer": "^10.4.14",
 		"browser-sync": "^2.29.1",
 		"del": "^7.0.0",
@@ -22,6 +22,7 @@
 		"imagemin-mozjpeg": "^10.0.0",
 		"imagemin-pngquant": "^9.0.2",
 		"imagemin-svgo": "^10.0.1",
+		"leaflet": "^1.9.4",
 		"pixelperfect-tool": "1.4.0",
 		"postcss-csso": "^6.0.1",
 		"postcss-scss": "^4.0.6",
@@ -38,14 +39,8 @@
 		"test": "npm run lint"
 	},
 	"editorconfig-cli": [
-		"*.js",
-		"*.json",
-		"source/*.html",
-		"source/js/**/*.js",
-		"source/img/**/*.svg",
-		"source/sass/**/*.scss",
-		"source/static/*.xml",
-		"source/static/*.webmanifest"
+		"*.{js,json}",
+		"source/**/*.{html,js,svg,scss,xml,webmanifest}"
 	],
 	"browserslist": [
 		"last 2 versions",
