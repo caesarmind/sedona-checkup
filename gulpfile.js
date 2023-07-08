@@ -68,7 +68,7 @@ export const minifyHtml = () => {
 }
 
 // JS Minification and bundling
-export const minifyJs = () => {
+export const buildJs = () => {
 	return src('source/scripts/main.js')
 		.pipe(esbuild({
 			outfile: 'main.js',
@@ -169,7 +169,7 @@ const server = (done) => {
 	});
 
 	watch('source/sass/**/*.scss', parallel(compileSass, lintStyles));
-	watch('source/scripts/**/*.js', series(lintJs, minifyJs, reload));
+	watch('source/scripts/**/*.js', series(lintJs, buildJs, reload));
 	watch('source/*.html', series(validateMarkup, lintBem, reload));
 	watch('source/icons/*.svg').on('all', series(stackSvg, reload));
 }
@@ -183,7 +183,7 @@ export const build = series(
 		stackSvg,
 		compileSass,
 		minifyHtml,
-		minifyJs
+		buildJs
 	),
 	createWebp
 );
@@ -195,7 +195,7 @@ export const dev = series (
 		compileSass,
 		stackSvg,
 		createWebp,
-		minifyJs
+		buildJs
 	),
 	server
 );

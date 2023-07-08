@@ -8,7 +8,7 @@ const BASE_COORDS = {
   lng: -111.7609896
 };
 
-var map = L.map('map').setView(BASE_COORDS, ZOOM);
+const map = L.map('map', { scrollWheelZoom: false }).setView(BASE_COORDS, ZOOM);
 
 L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
 	minZoom: ZOOM,

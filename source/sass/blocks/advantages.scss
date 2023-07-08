@@ -3,12 +3,13 @@
 
 	@include reset("list");
 
-	@media ($mobile) {
-		&--icon {
-			padding-bottom: 50px;
-			background-color: $color-white;
-		}
+	@media ($tablet-desktop) {
+		display: grid;
+		grid-column: 1 / -1;
+		grid-template-columns: repeat(3, 1fr);
+	}
 
+	@media ($mobile) {
 		&--arrow::before {
 			content: "";
 			position: relative;
@@ -29,10 +30,13 @@
 		}
 	}
 
-	@media ($tablet-desktop) {
-		display: grid;
-		grid-column: 1 / -1;
-		grid-template-columns: repeat(3, 1fr);
+	&--icon {
+		padding-bottom: 50px;
+		background-color: $color-white;
+
+		@media ($tablet-desktop) {
+			padding-bottom: 19px;
+		}
 	}
 }
 
@@ -54,15 +58,6 @@
 	padding: 26px 15px 24px;
 	text-align: center;
 
-
-	&--border {
-		&:not(:last-child) {
-			@media ($mobile) {
-				border-bottom: 1px solid $color-gray;
-			}
-		}
-	}
-
 	@media ($tablet-desktop) {
 		box-sizing: border-box;
 		min-height: 256px;
@@ -71,6 +66,14 @@
 
 	@media ($desktop) {
 		padding-top: 45px;
+	}
+
+	&--bordered {
+		&:not(:last-child) {
+			@media ($mobile) {
+				border-bottom: 1px solid $color-gray;
+			}
+		}
 	}
 
 	&::after {

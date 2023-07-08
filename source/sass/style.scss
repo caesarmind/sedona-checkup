@@ -1,3 +1,6 @@
+// Additional styles
+@import "../../node_modules/leaflet/dist/leaflet";
+
 // Global
 @import "global/variables.scss";
 @import "global/fonts.scss";
@@ -19,6 +22,3 @@
 @import "blocks/page.scss";
 @import "blocks/social.scss";
 @import "blocks/video.scss";
-
-// Additional styles
-@import "../../node_modules/leaflet/dist/leaflet";
