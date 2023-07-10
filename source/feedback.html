@@ -38,7 +38,7 @@
 
 	<main>
 
-		<section class="page-content page-content--inner">
+		<section class="page-content page-content--inner-alter">
 			<div class="page-content__cover">
 				<img class="page-content__cover-image" src="img/intro-inner.svg" width="229" height="39" alt="Text logo of Sedona.">
 			</div>
@@ -48,51 +48,65 @@
 			</h1>
 			<p class="page-content__description">
 				Помогите нашим отелям стать лучше!
-				Оставьте отзыв о них, а также о посещенных вами достопримечательностях
+				Оставьте отзыв о них, <br class="no-mobile">
+				а также о посещенных вами достопримечательностях
 			</p>
 		</section>
 
 		<form class="form" action="https://echo.htmlacademy.ru/" method="POST">
-			<fieldset class="form__fieldset form__fieldset--info">
-				<legend class="form__title">Представьтесь:</legend>
+			<fieldset class="form__fieldset">
+				<legend class="form__title-wrapper form__title-wrapper--info">
+					<h2 class="form__title">
+						Представьтесь:
+					</h2>
+				</legend>
 				<ul class="form__fieldlist">
 					<li class="form__item">
-						<label class="form__field-label" for="surname">Фамилия</label>
-						<input class="form__field" type="text" id="surname" name="surname" placeholder="Введите фамилия" required>
-					</li>
-
-					<li class="form__item">
-						<label class="form__field-label" for="name">Имя</label>
+						<label class="form__field-label" for="name">Имя*:</label>
 						<input class="form__field" type="text" id="name" name="name" placeholder="Введите имя" required>
 					</li>
 
 					<li class="form__item">
-						<label class="form__field-label" for="middle-name">Отчество</label>
+						<label class="form__field-label" for="surname">Фамилия*:</label>
+						<input class="form__field" type="text" id="surname" name="surname" placeholder="Введите фамилия" required>
+					</li>
+
+					<li class="form__item">
+						<label class="form__field-label" for="middle-name">Отчество:</label>
 						<input class="form__field" type="text" id="middle-name" name="middle-name" placeholder="Введите отчество">
 					</li>
 				</ul>
 			</fieldset>
 
-			<fieldset class="form__fieldset form__fieldset--contact">
-				<legend class="form__title">Контактная информация:</legend>
+			<fieldset class="form__fieldset">
+				<legend class="form__title-wrapper form__title-wrapper--contact">
+					<h2 class="form__title">
+						Контактная информация:
+					</h2>
+				</legend>
 
 				<ul class="form__fieldlist">
-					<li class="form__item">
+					<li class="form__item form__item--phone">
 						<label class="form__field-label" for="phone-number">Контактный телефон*:</label>
-						<input class="form__field form__field--phone" type="number" id="phone-number" name="phone-number"
+						<input class="form__field form__field--icon" type="number" id="phone-number" name="phone-number"
 							placeholder="Введите телефон" required>
-
-
-					<li class="form__item">
+							<span class="form__icon form__icon--phone"></span>
+					</li>
+					<li class="form__item form__item--email">
 						<label class="form__field-label" for="e-mail">Электронная почта*:</label>
-						<input class="form__field form__field--email" type="email" id="e-mail" name="email"
+						<input class="form__field form__field--icon" type="email" id="e-mail" name="email"
 							placeholder="Введите e-mail" required>
+						<span class="form__icon form__icon--email"></span>
 					</li>
 				</ul>
 			</fieldset>
 
-			<fieldset class="form__fieldset form__fieldset--impressions">
-				<legend class="form__title">Ваше общее впечатление:</legend>
+			<fieldset class="form__fieldset">
+				<legend class="form__title-wrapper form__title-wrapper--impressions">
+					<h2 class="form__title">
+						Ваше общее впечатление:
+					</h2>
+				</legend>
 				<ul class="form__filter-list form__filter-list--impressions">
 					<li class="form__filter-item">
 						<label class="form__check-label">
@@ -118,8 +132,10 @@
 				</ul>
 
 			</fieldset>
-			<fieldset class="form__fieldset form__fieldset--sights">
-				<legend class="form__title">Посещенные достопримечательности:</legend>
+			<fieldset class="form__fieldset">
+				<legend class="form__title-wrapper form__title-wrapper--sights">
+					<h2 class="form__title">Посещенные достопримечательности:</h2>
+				</legend>
 				<ul class="form__filter-list form__filter-list--sights">
 					<li class="form__filter-item">
 						<label class="form__check-label">
@@ -154,11 +170,17 @@
 				</ul>
 			</fieldset>
 
-			<fieldset class="form__fieldset form__fieldset--message">
-				<legend class="form__title">Опишите свои эмоции:</legend>
+			<fieldset class="form__fieldset">
+				<legend class="form__title-wrapper form__title-wrapper--message">
+					<h2 class="form__title">
+						Опишите свои эмоции:
+					</h2>
+				</legend>
 				<label class="visually-hidden" for="feedback-message">Комментарий</label>
-				<textarea class="form__field form__field--message" name="feedback-message"
-				id="feedback-message" placeholder="Опишите подробно все свои восторги"></textarea>
+				<div class="form__input-wrapper">
+					<textarea class="form__field form__field--message" name="feedback-message"
+					id="feedback-message" placeholder="Опишите подробно все свои восторги"></textarea>
+				</div>
 			</fieldset>
 
 			<div class="form__button-wrapper">
@@ -211,28 +233,41 @@
 
 		<ul class="page-footer__social social">
 			<li class="social__item">
-				<a href="#">Vkontakte</a>
+				<a class="social__link" href="#" aria-label="Go to our Vkontakte page">
+					<svg aria-hidden="true" width="24" height="24">
+						<use xlink:href="img/sprite.svg#vk"></use>
+					</svg>
+				</a>
 			</li>
 			<li class="social__item">
-				<a href="#">Telegram</a>
+				<a class="social__link" href="#" aria-label="Go to our Telegram chanell">
+					<svg aria-hidden="true" width="24" height="24">
+						<use xlink:href="img/sprite.svg#telegram"></use>
+					</svg>
+				</a>
 			</li>
 			<li class="social__item">
-				<a href="#">Youtube</a>
+				<a class="social__link" href="#" aria-label="Go to our Youtube Channel">
+					<svg aria-hidden="true" width="24" height="24">
+						<use xlink:href="img/sprite.svg#youtube"></use>
+					</svg>
+				</a>
 			</li>
 		</ul>
 
 
 		<a class="page-footer__copyright" href="https://htmlacademy.ru/">
 			<p class="page-footer__copyright-title">Разработано</p>
-			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="HTMLACADEMY author of PSD.">
+			<img class="page-footer__copyright-img" src="img/copyright.svg" width="27" height="34" alt="Link to HTMLAcademy website">
 		</a>
 
 	</footer>
-	<script src="scripts/main.min.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
 	<script>
 		window.pixelperfect = {
 			breakpoints: [320, 768, 1280],
-			folder: 'pixelperfect'
+			folder: 'pixelperfect',
+			selector: 'html'
 		};
 	</script>
 	<script src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js"></script>
