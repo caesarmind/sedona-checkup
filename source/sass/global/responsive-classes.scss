@@ -1,0 +1,17 @@
+.no-mobile {
+	@media ($mobile) {
+		display: none;
+	}
+}
+
+.no-tablet {
+	@media ($tablet) {
+		display: none;
+	}
+}
+
+.no-desktop {
+	@media ($desktop) {
+		display: none;
+	}
+}

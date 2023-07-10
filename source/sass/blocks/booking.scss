@@ -1,9 +1,15 @@
 .booking {
-	padding: 63px 18px 49px;
+	padding: 44px 18px 49px;
 	text-align: center;
 
 	@media ($tablet-desktop) {
+		padding-top: 63px;
 		padding-bottom: 58px;
+	}
+
+	@media ($desktop) {
+		padding-top: 63px;
+		padding-bottom: 66px;
 	}
 }
 
@@ -30,10 +36,8 @@
 		margin-top: 35px;
 		margin-bottom: 44px;
 	}
-}
 
-.booking__button {
-	width: 100%;
-	max-width: 458px;
-	padding: 16px 20px;
+	@media ($desktop) {
+		margin-bottom: 49px;
+	}
 }

@@ -37,6 +37,10 @@
 		@media ($tablet-desktop) {
 			padding-bottom: 19px;
 		}
+
+		@media ($desktop) {
+			padding-bottom: 40px;
+		}
 	}
 }
 
@@ -65,13 +69,13 @@
 	}
 
 	@media ($desktop) {
-		padding-top: 45px;
+		padding: 45px 32px 39px;
 	}
 
 	&--bordered {
 		&:not(:last-child) {
 			@media ($mobile) {
-				border-bottom: 1px solid $color-gray;
+				border-bottom: 1px solid $color-gray-dark;
 			}
 		}
 	}
@@ -90,6 +94,10 @@
 		color: $color-white;
 		background-color: $color-accent;
 		border: none;
+
+		@media ($tablet-desktop) {
+			padding: 40px 15px 39px;
+		}
 	}
 }
 
@@ -147,8 +155,12 @@
 	@include reset("content");
 
 	@media ($tablet-desktop) {
-		padding: 0 60px;
+		padding: 0 20px;
 		font-size: 21px;
+	}
+
+	@media($desktop) {
+		padding: 0 70px;
 	}
 }
 
@@ -170,6 +182,7 @@
 
 	@media ($tablet-desktop) {
 		margin-top: 23px;
+		font-size: 14px;
 	}
 }
 
@@ -182,7 +195,7 @@
 .advantages__image {
 	display: block;
 	width: 100%;
-	height: 260px;
+	height: 100%;
 	background-color: $color-accent-extra-dark;
 	object-fit: cover;
 }

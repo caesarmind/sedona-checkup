@@ -1,10 +1,16 @@
 .video {
-	padding: 20px 28px 0;
+	padding: 20px 20px 0;
 	text-align: center;
 	border-top: 1px solid $color-gray;
 
 	@media ($tablet-desktop) {
+		margin-bottom: 34px;
 		border: none;
+	}
+
+	@media ($desktop) {
+		margin-bottom: 77px;
+		padding-top: 0;
 	}
 }
 
@@ -12,10 +18,11 @@
 	max-width: 445px;
 	margin: 0 auto;
 	margin-bottom: 30px;
-	padding: 0 60px;
+	padding: 0 20px;
+	font-size: 18px;
 
 	@media ($tablet-desktop) {
-		font-size: 21px;
+		font-size: 30px;
 		line-height: 26px;
 	}
 }
@@ -23,4 +30,25 @@
 .video__description {
 	max-width: 445px;
 	margin: 0 auto;
+	font-size: 14px;
+
+	@media ($desktop) {
+		padding: 2px 20px 0;
+	}
+}
+
+.video__src {
+	margin-top: 37px;
+
+	@media ($tablet-desktop) {
+		margin-top: 91px;
+	}
+
+	@media ($desktop) {
+		margin-top: 87px;
+	}
+}
+
+.video__src-img {
+	object-fit: cover;
 }
