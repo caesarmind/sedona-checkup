@@ -1,0 +1,15 @@
+.map__container {
+	width: 100%;
+	height: 350px;
+}
+
+.map__image {
+	display: none;
+	object-fit: cover;
+}
+
+.map--nojs {
+	.map__image {
+		display: block;
+	}
+}

@@ -13,3 +13,15 @@
 		padding: 0;
 	}
 }
+
+@mixin icon($icon, $mask: true) {
+	$value: url("../img/sprite.svg##{$icon}") no-repeat center / 100%;
+
+	@if $mask {
+		mask: $value;
+	}
+
+	@else {
+		background: $value;
+	}
+}

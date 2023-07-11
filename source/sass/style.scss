@@ -1,8 +1,12 @@
+// Additional styles
+@import "../../node_modules/leaflet/dist/leaflet";
+
 // Global
 @import "global/variables.scss";
 @import "global/fonts.scss";
 @import "global/mixins.scss";
 @import "global/visually-hidden.scss";
+@import "global/responsive-classes.scss";
 
 // Blocks
 @import "blocks/advantages.scss";
@@ -10,11 +14,12 @@
 @import "blocks/button.scss";
 @import "blocks/form.scss";
 @import "blocks/gallery.scss";
-@import "blocks/modal.scss";
 @import "blocks/main-nav.scss";
+@import "blocks/map.scss";
+@import "blocks/modal.scss";
 @import "blocks/navigation.scss";
-@import "blocks/page.scss";
 @import "blocks/page-content.scss";
 @import "blocks/page-footer.scss";
+@import "blocks/page.scss";
 @import "blocks/social.scss";
 @import "blocks/video.scss";

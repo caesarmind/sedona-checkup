@@ -1,4 +1,4 @@
-.navigation__list {
+.navigation {
 	@include reset("list");
 
 	@media ($tablet-desktop) {
@@ -30,7 +30,7 @@
 
 .navigation__link {
 	display: block;
-	padding: 14px 17px 13px;
+	padding: 15px 50px 14px;
 	font-weight: 700;
 	line-height: 26px;
 	text-align: center;
@@ -40,12 +40,14 @@
 
 
 	@media ($mobile) {
+		font-size: 18px;
 		background-color: $color-accent;
-		border-top: 1px solid rgba($color-black-light, 0.2);
-		border-bottom: 1px solid rgba($color-white, 0.2);
+		border-top: 1px solid rgba($color-white, 0.2);
+		border-bottom: 1px solid rgba($color-black-light, 0.2);
 	}
 
 	@media ($tablet-desktop) {
+		padding: 15px 20px 14px;
 		color: $color-black;
 		background-color: $color-white;
 	}
