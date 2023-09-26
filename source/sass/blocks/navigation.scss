@@ -51,4 +51,10 @@
 		color: $color-black;
 		background-color: $color-white;
 	}
+
+	&--current {
+		@media ($tablet-desktop) {
+			color: $color-brown;
+		}
+	}
 }

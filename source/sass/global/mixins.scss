@@ -25,3 +25,27 @@
 		background: $value;
 	}
 }
+
+@mixin retinal-image($file, $ext: "webp") {
+	background-image: url("../img/#{$file}.#{$ext}");
+
+	@media ($retina) {
+		background-image: url("../img/#{$file}@2x.#{$ext}");
+	}
+}
+
+@mixin adaptive-image($file, $ext: "webp", $desktop: true) {
+	@media ($mobile) {
+		@include retinal-image("#{$file}-mobile", $ext);
+	}
+
+	@media ($tablet-desktop) {
+		@include retinal-image("#{$file}-tablet-desktop", $ext);
+	}
+
+	@if ($desktop) {
+		@media ($desktop) {
+			@include retinal-image("#{$file}-desktop", $ext);
+		}
+	}
+}

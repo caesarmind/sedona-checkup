@@ -45,18 +45,11 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 
-	@media ($retina) {
-		background-image: url("../img/back-mobile@2x.jpg");
-	}
+	@include adaptive-image("back", "webp", false);
 
 	@media ($tablet-desktop) {
 		min-height: 290px;
-		background-image: url("../img/back-desktop.jpg");
-
-		@media ($retina) {
-			background-image: url("../img/back-desktop@2x.jpg");
-			background-size: 1200px auto;
-		}
+		background-size: 1200px auto;
 	}
 
 	@media ($desktop) {
@@ -102,7 +95,7 @@
 
 .page-content--inner {
 	.page-content__title {
-		padding-top: 33px;
+		padding-top: 38px;
 		padding-bottom: 25px;
 
 		@media ($tablet-desktop) {
@@ -116,7 +109,7 @@
 	}
 
 	.page-content__description {
-		padding: 0 20px 17px;
+		padding: 0 20px 12px;
 
 		@media ($tablet-desktop) {
 			padding: 0 120px;
@@ -135,7 +128,8 @@
 		padding-top: 52px;
 
 		@media ($tablet-desktop) {
-			transform: translateY(-37px);
+			padding-top: 0;
+			transform: translateY(-11px);
 		}
 	}
 }
@@ -176,7 +170,8 @@
 		padding-top: 52px;
 
 		@media ($tablet-desktop) {
-			transform: translateY(-37px);
+			padding-top: 0;
+			transform: translateY(-11px);
 		}
 	}
 }

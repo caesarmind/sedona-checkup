@@ -48,6 +48,15 @@
 	}
 }
 
+// Odd numbered cards get different color. First one is exclusion
+.gallery__item:nth-of-type(odd):not(:first-child) {
+	@media ($tablet) {
+		.gallery__content-wrapper {
+			background-color: $color-gray-extra-light;
+		}
+	}
+}
+
 .gallery__content-wrapper {
 	position: relative;
 	margin-top: 15px;
@@ -92,17 +101,16 @@
 
 .gallery__like {
 	display: flex;
-	align-items: flex-end;
-	column-gap: 10px;
-
-	@media ($mobile) {
-		margin-top: 17px;
-	}
+	align-items: flex-start;
+	margin-top: 12px;
+	column-gap: 14px;
 
 	@media ($tablet-desktop) {
 		position: absolute;
 		top: 28px;
 		right: 20px;
+		margin-top: 0;
+		column-gap: 9px;
 	}
 }
 
@@ -115,14 +123,18 @@
 	border: none;
 	cursor: pointer;
 
-	@media ($tablet-desktop) {
+	@media ($desktop) {
 		background-color: $color-white;
 	}
 }
 
 .gallery__like-count {
-	display: inline-block;
+	padding-top: 5px;
 	font-weight: 700;
 
 	@include reset("content");
+
+	@media ($tablet-desktop) {
+		padding-top: 4px;
+	}
 }
